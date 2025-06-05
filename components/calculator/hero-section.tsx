@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRightIcon, Calculator } from "lucide-react";
+import { ArrowRightIcon, ChevronsDown } from "lucide-react";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import { Glow } from "@/components/ui/glow";
 import Image from "next/image";
@@ -79,36 +79,64 @@ export function HeroSection({
           </p>
 
           {/* Actions */}
-          <div className="relative z-10 flex animate-appear justify-center gap-4 opacity-0 delay-300">
+          <div className="relative z-10 flex flex-col items-center animate-appear gap-4 opacity-0 delay-300 pt-8">
             {actions.map((action, index) => {
-              const { variant, ...rest } = action;
-              const buttonVariant = variant === 'glow' ? 'default' : variant;
-              return (
-                <Button 
-                  key={index} 
-                  variant={buttonVariant as any} 
-                  size="lg" 
-                  asChild
-                  className={variant === 'glow' ? 'relative overflow-hidden' : ''}
-                >
-                  <a href={action.href} className="flex items-center gap-2 relative z-10">
-                    {action.icon}
-                    {action.text}
-                    {variant === 'glow' && (
-                      <span className="absolute -inset-1 rounded-lg bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 opacity-75 blur transition-all duration-1000 group-hover:opacity-100" />
-                    )}
-                  </a>
-                </Button>
-              );
+              if (action.text === "Start Calculating") {
+                return (
+                  <div key={index} className="flex flex-col items-center">
+                    {/* Pill-shaped box with increased padding */}
+                    <div
+                      className="
+                        flex items-center justify-center
+                        bg-background/20
+                        backdrop-blur-md
+                        border border-foreground/10
+                        shadow-lg rounded-full
+                        px-6 py-3   /* increased padding */
+                      "
+                    >
+                      <span className="text-lg font-medium text-primary">
+                        {action.text}
+                      </span>
+                    </div>
+
+                    {/* Larger animated scroll icon, more space below box */}
+                    <ChevronsDown className="h-8 w-8 mt-4 animate-bounce text-primary" />
+                  </div>
+                );
+              } else {
+                // Original button rendering logic for other actions
+                const { variant, ...rest } = action;
+                const buttonVariant = variant === "glow" ? "default" : variant;
+                return (
+                  <Button
+                    key={index}
+                    variant={buttonVariant as any}
+                    size="lg"
+                    asChild
+                    className={
+                      variant === "glow" ? "relative overflow-hidden" : ""
+                    }
+                  >
+                    <a
+                      href={action.href}
+                      className="flex items-center gap-2 relative z-10"
+                    >
+                      {action.icon}
+                      {action.text}
+                      {variant === "glow" && (
+                        <span className="absolute -inset-1 rounded-lg bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 opacity-75 blur transition-all duration-1000 group-hover:opacity-100" />
+                      )}
+                    </a>
+                  </Button>
+                );
+              }
             })}
           </div>
 
           {/* Image with Glow */}
           <div className="relative pt-12">
-            <MockupFrame
-              className="animate-appear opacity-0 delay-700"
-              size="small"
-            >
+            <MockupFrame className="animate-appear opacity-0 delay-700" size="small">
               {children || (
                 <Mockup type="responsive">
                   <Image
@@ -121,10 +149,7 @@ export function HeroSection({
                 </Mockup>
               )}
             </MockupFrame>
-            <Glow
-              variant="top"
-              className="animate-appear-zoom opacity-0 delay-1000"
-            />
+            <Glow variant="top" className="animate-appear-zoom opacity-0 delay-1000" />
           </div>
         </div>
       </div>
