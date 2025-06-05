@@ -14,7 +14,9 @@ const config: Config = {
         'container': '1400px',
       },
       fontFamily: {
-        playfair: ['var(--font-playfair)'],
+        sans: ['var(--font-roboto)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        playfair: ['var(--font-playfair)', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

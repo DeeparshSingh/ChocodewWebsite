@@ -56,26 +56,24 @@ export function Header() {
           animate={{ scale: isScrolled ? 0.9 : 1 }}
           transition={{ duration: 0.3 }}
         >
-          <Button 
-            variant="ghost" 
-            className="flex items-center gap-2 px-0 hover:bg-transparent group"
+          <button 
+            className="flex items-center gap-2 px-0 group"
             onClick={() => handleNavigation("/")}
           >
             <Coffee 
               size={32} 
               className="text-primary transition-transform duration-300 group-hover:scale-110" 
             />
-            <span className="font-playfair font-bold text-2xl">Chocodew</span>
-          </Button>
+            <span className="font-playfair font-bold text-2xl text-foreground group-hover:text-primary transition-colors duration-300">Chocodew</span>
+          </button>
         </motion.div>
 
-        <nav className="hidden md:flex items-center space-x-1">
+        <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <Button
+            <button
               key={item.name}
-              variant="ghost"
               className={cn(
-                "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 relative hover:scale-105",
+                "relative text-sm font-medium transition-colors duration-300",
                 pathname === item.href
                   ? "text-primary"
                   : "text-muted-foreground hover:text-primary"
@@ -86,13 +84,13 @@ export function Header() {
               {pathname === item.href && (
                 <motion.span
                   layoutId="underline"
-                  className="absolute left-0 right-0 bottom-0 h-0.5 bg-primary mx-4"
+                  className="absolute left-0 right-0 bottom-0 h-0.5 bg-primary"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 />
               )}
-            </Button>
+            </button>
           ))}
         </nav>
 
@@ -130,18 +128,17 @@ export function Header() {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Button
-                    variant="ghost"
+                  <button
                     className={cn(
-                      "justify-start px-4 py-3 rounded-md text-sm font-medium w-full transition-all duration-300",
+                      "w-full text-left px-4 py-3 text-sm font-medium transition-colors duration-300",
                       pathname === item.href
-                        ? "bg-primary/10 text-primary"
-                        : "text-foreground hover:bg-primary/5 hover:text-primary"
+                        ? "text-primary"
+                        : "text-foreground hover:text-primary"
                     )}
                     onClick={() => handleNavigation(item.href)}
                   >
                     {item.name}
-                  </Button>
+                  </button>
                 </motion.div>
               ))}
             </div>

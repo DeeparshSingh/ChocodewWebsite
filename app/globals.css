@@ -116,12 +116,15 @@
   }
   
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-roboto text-base;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair font-semibold leading-tight;
+    @apply font-playfair font-semibold leading-tight tracking-tight;
   }
   
   h1 {
@@ -140,8 +143,52 @@
     @apply text-xl md:text-2xl;
   }
   
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+  
+  h6 {
+    @apply text-base md:text-lg font-medium;
+  }
+  
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed text-base md:text-base;
+  }
+  
+  .text-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  
+  .text-base {
+    @apply text-[16px] leading-[24px];
+  }
+  
+  .text-lg {
+    @apply text-[18px] leading-[28px];
+  }
+  
+  .text-xl {
+    @apply text-[20px] leading-[28px];
+  }
+  
+  .text-2xl {
+    @apply text-[24px] leading-[32px];
+  }
+  
+  .text-3xl {
+    @apply text-[30px] leading-[38px];
+  }
+  
+  .text-4xl {
+    @apply text-[36px] leading-[44px];
+  }
+  
+  .text-5xl {
+    @apply text-[48px] leading-[56px];
+  }
+  
+  .text-6xl {
+    @apply text-[60px] leading-[68px];
   }
 }
 
