@@ -12,8 +12,8 @@ export default function ProductsPage() {
           initial={{ opacity: 0.0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.3,
-            duration: 0.8,
+            delay: 0,
+            duration: 0.6,
             ease: "easeInOut",
           }}
           className="max-w-7xl mx-auto px-4 pt-32 pb-12 md:pt-40 md:pb-16 relative z-10"

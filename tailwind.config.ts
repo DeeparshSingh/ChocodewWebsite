@@ -14,8 +14,8 @@ const config: Config = {
         'container': '1400px',
       },
       fontFamily: {
-        sans: ['var(--font-roboto)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        roboto: ['var(--font-roboto)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Helvetica', 'ui-sans-serif', 'system-ui', 'sans-serif'], // Changed to Helvetica
+        roboto: ['Helvetica', 'ui-sans-serif', 'system-ui', 'sans-serif'], // Changed to Helvetica, though this key might become redundant
         playfair: ['var(--font-playfair)', 'serif'],
       },
       backgroundImage: {

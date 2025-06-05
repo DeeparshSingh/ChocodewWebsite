@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display, Roboto } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/header';
@@ -11,13 +11,6 @@ import Script from 'next/script';
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap'
-});
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
-  variable: '--font-roboto',
   display: 'swap'
 });
 
@@ -45,9 +38,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(
         inter.variable, 
-        roboto.variable,
         playfair.variable,
-        "font-roboto bg-neutral-50 text-stone-950 antialiased",
+        "font-sans bg-neutral-50 text-stone-950 antialiased", // Changed font-roboto to font-sans
       )}>
         <ThemeProvider
           attribute="class"
