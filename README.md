@@ -9,6 +9,9 @@ A premium website for Chocodew, an Indian beverage-vending brand by Marine Inter
 - Tailwind CSS
 - shadcn/ui components
 - Framer Motion for animations
+- React Hook Form for form management
+- Zod for schema validation
+- Lucide React for icons
 
 ## Features
 
@@ -41,12 +44,24 @@ pnpm install
 pnpm dev
 ```
 
+### Linting and Formatting
+
+To lint the codebase:
+```bash
+pnpm lint
+```
+
+To format the codebase:
+```bash
+pnpm format
+```
+
 The development server will start, and you can view the website at [http://localhost:3000](http://localhost:3000).
 
 ## Project Structure
 
 - `/app` - Next.js App Router pages
-- `/components` - React components organized by feature
+- `/components` - React components organized by feature. Contains a `/ui` subdirectory for shadcn/ui components.
 - `/data` - Sample data for products, testimonials, etc.
 - `/types` - TypeScript type definitions
 - `/lib` - Utility functions and shared logic
@@ -64,10 +79,16 @@ NEXT_PUBLIC_GA_ID=""
 NEXT_PUBLIC_SITE_URL="http://localhost:3000"
 ```
 
-## Building for Production
+## Building and Running for Production
 
+To build the application for production:
 ```bash
 pnpm build
 ```
 
-This will generate a static export in the `out` directory.
+After a successful build, you can start the production server with:
+```bash
+pnpm start
+```
+
+This will serve the optimized production build, typically on port 3000 (or as configured).

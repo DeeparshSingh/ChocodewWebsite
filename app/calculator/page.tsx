@@ -28,7 +28,7 @@ export default function CalculatorPage() {
           alt: ""
         }}
       >
-        <div id="calculator" className="w-full mx-auto px-4 py-8 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
+        <div id="calculator" className="w-full mx-auto p-6 max-w-lg">
           <CalculatorForm />
         </div>
       </HeroSection>

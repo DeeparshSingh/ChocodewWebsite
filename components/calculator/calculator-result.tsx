@@ -53,7 +53,7 @@ export function CalculatorResult({
           </CardTitle>
           <CardDescription>Based on your consumption pattern</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="p-6 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <div className="p-4 rounded-lg bg-background shadow-sm">
               <h4 className="text-sm font-medium text-muted-foreground mb-1">
@@ -94,23 +94,23 @@ export function CalculatorResult({
             </ul>
           </div>
         </CardContent>
-        <CardFooter className="flex flex-wrap gap-4">
+        <CardFooter className="flex items-center justify-center gap-2">
           <Button
             onClick={handleWhatsAppClick}
-            className="flex items-center gap-2"
-            size="lg"
+            className="flex items-center gap-1"
+            size="sm"
           >
-            <MessageCircle className="h-5 w-5" />
+            <MessageCircle className="h-4 w-4" />
             Order via WhatsApp
           </Button>
           <Button
             variant="outline"
-            className="flex items-center gap-2"
-            size="lg"
+            className="flex items-center gap-1"
+            size="sm"
             asChild
           >
             <a href="/products?tab=premixes">
-              <ShoppingBag className="h-5 w-5" />
+              <ShoppingBag className="h-4 w-4" />
               Browse Premixes
             </a>
           </Button>

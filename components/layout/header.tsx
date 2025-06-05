@@ -48,8 +48,7 @@ export function Header() {
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
       <div className={cn(
-        "container mx-auto px-4 flex items-center justify-between",
-        isScrolled && "max-w-7xl mx-auto"
+        "container mx-auto px-4 flex items-center justify-between max-w-7xl"
       )}>
         <motion.div
           initial={{ scale: 1 }}
@@ -62,9 +61,15 @@ export function Header() {
           >
             <Coffee 
               size={32} 
-              className="text-primary transition-transform duration-300 group-hover:scale-110" 
+              className={cn(
+                "transition-transform duration-300 group-hover:scale-110",
+                pathname === '/' && !isScrolled ? "text-white" : "text-primary"
+              )} 
             />
-            <span className="font-playfair font-bold text-2xl text-foreground group-hover:text-primary transition-colors duration-300">Chocodew</span>
+            <span className={cn(
+              "font-playfair font-bold text-2xl transition-colors duration-300 group-hover:text-primary",
+              pathname === '/' && !isScrolled ? "text-white" : "text-foreground"
+            )}>Chocodew</span>
           </button>
         </motion.div>
 
@@ -74,9 +79,9 @@ export function Header() {
               key={item.name}
               className={cn(
                 "relative text-sm font-medium transition-colors duration-300",
-                pathname === item.href
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-primary"
+                (pathname === item.href && item.href === '/' && !isScrolled) ? "text-white"
+                : pathname === item.href ? "text-primary"
+                : "text-muted-foreground hover:text-primary"
               )}
               onClick={() => handleNavigation(item.href)}
             >
@@ -84,7 +89,10 @@ export function Header() {
               {pathname === item.href && (
                 <motion.span
                   layoutId="underline"
-                  className="absolute left-0 right-0 bottom-0 h-0.5 bg-primary"
+                  className={cn(
+                    "absolute left-0 right-0 bottom-0 h-0.5",
+                    (pathname === item.href && item.href === '/' && !isScrolled) ? "bg-white" : "bg-primary"
+                  )}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -131,9 +139,9 @@ export function Header() {
                   <button
                     className={cn(
                       "w-full text-left px-4 py-3 text-sm font-medium transition-colors duration-300",
-                      pathname === item.href
-                        ? "text-primary"
-                        : "text-foreground hover:text-primary"
+                      (pathname === item.href && item.href === '/' && !isScrolled) ? "text-white"
+                      : pathname === item.href ? "text-primary"
+                      : "text-foreground hover:text-primary"
                     )}
                     onClick={() => handleNavigation(item.href)}
                   >

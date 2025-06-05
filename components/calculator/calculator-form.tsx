@@ -30,6 +30,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Calculator, Coffee, CalendarDays, Bean } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalculatorResult } from "@/components/calculator/calculator-result";
 
@@ -92,10 +93,13 @@ export function CalculatorForm() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto space-y-8">
-      <Card className="w-full">
+    <div className="w-full max-w-lg mx-auto space-y-8">
+      <Card className="w-full border">
         <CardHeader>
-          <CardTitle>Calculate Your Premix Requirements</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+          <Calculator className="h-5 w-5 text-primary" />
+          Calculate Your Premix Requirements
+        </CardTitle>
           <CardDescription>
             Fill in the form below to estimate how much premix you will need.
           </CardDescription>
@@ -111,7 +115,10 @@ export function CalculatorForm() {
                 name="cups"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Number of Cups</FormLabel>
+                    <FormLabel className="flex items-center gap-1.5">
+                      <Coffee className="h-4 w-4 text-muted-foreground" />
+                      Number of Cups
+                    </FormLabel>
                     <FormControl>
                       <Input type="number" {...field} min={1} />
                     </FormControl>
@@ -128,12 +135,15 @@ export function CalculatorForm() {
                 name="timeframe"
                 render={({ field }) => (
                   <FormItem className="space-y-3">
-                    <FormLabel>Time Period</FormLabel>
+                    <FormLabel className="flex items-center gap-1.5">
+                      <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                      Time Period
+                    </FormLabel>
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
                         defaultValue={field.value}
-                        className="flex flex-wrap gap-4"
+                        className="flex flex-wrap gap-4 justify-center"
                       >
                         <FormItem className="flex items-center space-x-2 space-y-0">
                           <FormControl>
@@ -171,7 +181,10 @@ export function CalculatorForm() {
                 name="premixType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Beverage Type</FormLabel>
+                    <FormLabel className="flex items-center gap-1.5">
+                      <Bean className="h-4 w-4 text-muted-foreground" />
+                      Beverage Type
+                    </FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
