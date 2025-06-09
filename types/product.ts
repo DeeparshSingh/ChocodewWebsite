@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   slug: string;
   category: "machines" | "premixes" | "dispensers" | "chocolates";
-  image: string;
+  images: string[]; // Changed from single image to array for carousel
   shortDescription: string;
   description: string;
   featured: boolean;

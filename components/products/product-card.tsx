@@ -22,7 +22,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
           <Link href={`/products/${product.slug}`}>
             <Image
-              src={product.image}
+              src={product.images && product.images.length > 0 ? product.images[0] : '/placeholder-image.jpg'} // Use first image or a placeholder
               alt={product.name}
               fill
               className="object-cover transition-transform duration-300 hover:scale-105"

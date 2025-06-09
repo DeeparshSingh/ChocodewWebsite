@@ -41,7 +41,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     .slice(0, 4);
   
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 md:px-8 md:py-16">
+    <div className="max-w-7xl mx-auto px-4 pt-24 pb-12 md:px-8 md:pt-32 md:pb-16">
       <ProductDetails product={product} />
       
       {relatedProducts.length > 0 && (

@@ -3,17 +3,25 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import { Product } from "@/types/product";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { CheckCircle2 } from 'lucide-react';
 import { ProductEnquiryModal } from "@/components/products/product-enquiry-modal";
+import { ProductImageCarousel } from "@/components/products/product-image-carousel";
 
 interface ProductDetailsProps {
   product: Product;
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {
+  const itemAnimation = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.3 }
+  };
+
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
 
   const handleWhatsAppClick = () => {
@@ -25,25 +33,23 @@ export function ProductDetails({ product }: ProductDetailsProps) {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
       {/* Product Image */}
       <motion.div 
-        className="bg-muted rounded-lg overflow-hidden"
+        className="md:sticky md:top-24 self-start" // Adjusted for top alignment with sticky
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <img 
-          src={product.image} 
-          alt={product.name}
-          className="w-full h-full object-cover aspect-square"
-        />
+        <div className="w-full max-w-md lg:max-w-lg mx-auto">
+          <ProductImageCarousel images={product.images} altText={product.name} options={{ loop: true }} />
+        </div>
       </motion.div>
 
       {/* Product Information */}
       <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        initial="initial"
+        animate="animate"
+        transition={{ duration: 0.5, delay: 0.2, staggerChildren: 0.1 }}
       >
-        <div className="flex items-center gap-3 mb-2">
+        <motion.div variants={itemAnimation} className="flex flex-wrap items-center gap-3 mb-3">
           <Badge className="text-xs px-3 py-1 bg-secondary text-secondary-foreground">
             {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
           </Badge>
@@ -52,17 +58,17 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               Featured Product
             </Badge>
           )}
-        </div>
+        </motion.div>
 
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">{product.name}</h1>
+        <motion.h1 variants={itemAnimation} className="text-3xl md:text-4xl font-bold mb-4">{product.name}</motion.h1>
         
-        <p className="text-muted-foreground mb-6">{product.description}</p>
+        <motion.p variants={itemAnimation} className="text-muted-foreground mb-6">{product.description}</motion.p>
         
-        <Separator className="my-6" />
+        <motion.div variants={itemAnimation}><Separator className="my-8" /></motion.div>
         
         {/* Product Specifications */}
-        <div className="mb-6">
-          <h3 className="font-medium text-lg mb-3">Specifications</h3>
+        <motion.div variants={itemAnimation} className="mb-6">
+          <h3 className="font-semibold text-xl md:text-2xl mb-4">Specifications</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
             {product.specs.map((spec, index) => (
               <div key={index} className="flex">
@@ -71,37 +77,34 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <Separator className="my-6" />
+        <motion.div variants={itemAnimation}><Separator className="my-8" /></motion.div>
         
-        {/* Product Features and Details Tabs */}
-        <Tabs defaultValue="features" className="mb-8">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="features">Features</TabsTrigger>
-            <TabsTrigger value="details">Details</TabsTrigger>
-          </TabsList>
-          <TabsContent value="features" className="p-4 rounded-md bg-muted/50 mt-2">
-            <ul className="list-disc list-inside space-y-1">
+        {/* Product Features */}
+        {product.features && product.features.length > 0 && (
+          <motion.div variants={itemAnimation} className="mb-8">
+            <h3 className="font-semibold text-xl md:text-2xl mb-4">Features</h3>
+            <div className="mt-3 space-y-3">
               {product.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
+                <motion.div key={index} variants={itemAnimation} className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">{feature}</span>
+                </motion.div>
               ))}
-            </ul>
-          </TabsContent>
-          <TabsContent value="details" className="p-4 rounded-md bg-muted/50 mt-2">
-            <p>{product.detailsText || "Detailed information about this product will be provided upon request."}</p>
-          </TabsContent>
-        </Tabs>
+            </div>
+          </motion.div>
+        )}
         
         {/* Call to Action Buttons */}
-        <div className="flex flex-wrap gap-4">
+        <motion.div variants={itemAnimation} className="flex flex-wrap gap-4 mt-8">
           <Button onClick={() => setShowEnquiryModal(true)} size="lg">
             Request Information
           </Button>
           <Button variant="outline" size="lg" onClick={handleWhatsAppClick}>
             Contact via WhatsApp
           </Button>
-        </div>
+        </motion.div>
       </motion.div>
 
       <ProductEnquiryModal 
