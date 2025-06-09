@@ -19,8 +19,8 @@ export function ContactInfo() {
     >
       <Card className="border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl">
         <CardHeader className="pb-6">
-          <CardTitle className="text-2xl md:text-3xl">Contact Information</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-2xl md:text-3xl font-semibold">Contact Information</CardTitle>
+          <CardDescription className="text-base text-muted-foreground">
             Get in touch with us through any of these channels
           </CardDescription>
         </CardHeader>
@@ -57,13 +57,14 @@ export function ContactInfo() {
             </div>
             <div>
               <h3 className="font-roboto font-medium text-lg mb-1">Phone</h3>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-wrap items-center">
                 <a 
                   href="tel:+919876333111" 
                   className="text-muted-foreground font-roboto hover:text-primary transition-all duration-300"
                 >
                   +91-9876333111
                 </a>
+                <span className="text-muted-foreground font-roboto">,&nbsp;</span>
                 <a 
                   href="tel:+919878555111" 
                   className="text-muted-foreground font-roboto hover:text-primary transition-all duration-300"

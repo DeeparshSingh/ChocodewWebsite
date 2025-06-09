@@ -14,7 +14,7 @@ export default function Home() {
       
       <section className="w-full py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="mb-3">Our Premium Products</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">Our Premium Products</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Discover our range of high-quality vending machines and premium beverage mixes,
             designed to deliver exceptional taste and convenience.

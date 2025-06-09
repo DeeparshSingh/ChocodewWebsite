@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { Product } from "@/types/product";
+import Image from "next/image";
 import { useState } from "react";
 import { ProductEnquiryModal } from "@/components/products/product-enquiry-modal";
 
@@ -20,10 +21,12 @@ export function ProductCard({ product }: ProductCardProps) {
       <Card className="card-hover overflow-hidden h-full flex flex-col mx-auto w-[90%] sm:w-full">
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
           <Link href={`/products/${product.slug}`}>
-            <img
+            <Image
               src={product.image}
               alt={product.name}
-              className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-105"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw" // Provides hints for responsive image loading
             />
           </Link>
           {product.featured && (

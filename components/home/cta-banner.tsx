@@ -24,11 +24,11 @@ export function CtaBanner() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xl md:text-4xl font-bold mb-3 md:mb-4 text-white">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-white">
             Estimate Your Monthly Premix Needs in 30 Seconds
           </h2>
-          <p className="text-sm md:text-lg text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto">
-            Use our simple calculator to determine exactly how much premix you'll need based on your 
+          <p className="text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto">
+            Use our simple calculator to determine exactly how much premix you&apos;ll need based on your 
             consumption patterns and beverage preferences.
           </p>
           <Button 

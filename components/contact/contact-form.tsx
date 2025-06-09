@@ -79,8 +79,8 @@ export function ContactForm() {
     >
       <Card className="border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl">
         <CardHeader className="pb-6">
-          <CardTitle className="text-2xl md:text-3xl">Send Us a Message</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-2xl md:text-3xl font-semibold">Send Us a Message</CardTitle>
+          <CardDescription className="text-base text-muted-foreground">
             Fill out the form below and we&apos;ll get back to you as soon as possible.
           </CardDescription>
         </CardHeader>
@@ -131,7 +131,7 @@ export function ContactForm() {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="company">Company (Optional)</Label>
+            <Label htmlFor="company" className="text-base">Company (Optional)</Label>
             <Input id="company" {...register("company")} />
           </div>
           

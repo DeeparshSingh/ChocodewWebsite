@@ -136,7 +136,7 @@ export function HeroSection({
 
           {/* Image with Glow */}
           <div className="relative pt-12">
-            <MockupFrame className="animate-appear opacity-0 delay-700" size="small">
+            <MockupFrame className="animate-appear opacity-0 delay-500" size="small">
               {children || (
                 <Mockup type="responsive">
                   <Image
@@ -149,7 +149,7 @@ export function HeroSection({
                 </Mockup>
               )}
             </MockupFrame>
-            <Glow variant="top" className="animate-appear-zoom opacity-0 delay-1000" />
+            <Glow variant="top" className="animate-appear-zoom opacity-0 delay-700" />
           </div>
         </div>
       </div>

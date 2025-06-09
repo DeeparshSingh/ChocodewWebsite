@@ -13,10 +13,10 @@ export function TestimonialStrip() {
   return (
     <section className="w-full py-10 md:py-16 bg-primary/5 overflow-hidden">
       <div className="container mx-auto px-4 mb-6 md:mb-10 text-center">
-        <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">What Our Customers Say</h2>
-        <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4">What Our Customers Say</h2>
+        <p className="text-base text-muted-foreground max-w-2xl mx-auto">
           We take pride in delivering exceptional products and services to our clients. 
-          Here's what they have to say about their experience with Chocodew.
+          Here&apos;s what they have to say about their experience with Chocodew.
         </p>
       </div>
       
@@ -37,10 +37,10 @@ export function TestimonialStrip() {
                     />
                   ))}
                 </div>
-                <p className="text-xs md:text-sm mb-3 italic">"{testimonial.text}"</p>
+                <p className="text-sm mb-3 italic">&ldquo;{testimonial.text}&rdquo;</p>
                 <div>
                   <p className="text-sm font-semibold">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.company}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.company}</p>
                 </div>
               </CardContent>
             </Card>

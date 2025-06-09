@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TypingAnimation } from "@/components/ui/typing-animation";
+import { SplitText } from "@/components/ui/split-text";
 import { motion } from "framer-motion";
 import { Coffee, Award, Truck, HeartHandshake } from "lucide-react";
 
@@ -55,8 +55,8 @@ export function ValueProps() {
     <section className="w-full py-8 md:py-20 bg-neutral-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6 md:mb-12">
-          <TypingAnimation text="Why Choose Chocodew?" className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4" />
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
+          <SplitText text="Why Choose Chocodew?" className="text-2xl md:text-3xl lg:text-4xl font-bold font-playfair mb-6 md:mb-12"/>
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4 pt-4">
             Our commitment to excellence and customer satisfaction sets us apart in the beverage vending industry.
           </p>
         </div>
