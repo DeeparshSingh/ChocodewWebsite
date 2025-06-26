@@ -45,7 +45,7 @@ export function Header() {
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+      transition={{ duration: 0.3 }}
     >
       <div className={cn(
         "container mx-auto px-4 flex items-center justify-between max-w-7xl"

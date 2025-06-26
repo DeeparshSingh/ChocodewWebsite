@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  category: "machines" | "premixes" | "dispensers" | "chocolates";
+  category: "machines" | "premixes" | "dispensers";
   images: string[]; // Changed from single image to array for carousel
   shortDescription: string;
   description: string;

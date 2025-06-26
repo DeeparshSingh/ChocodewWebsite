@@ -97,11 +97,7 @@ export function Footer() {
                   Water Dispensers
                 </Link>
               </li>
-              <li>
-                <Link href="/products?tab=chocolates" className="text-sm text-stone-300 hover:text-accent transition-colors">
-                  Chocolates
-                </Link>
-              </li>
+
             </ul>
           </div>
 
@@ -111,28 +107,23 @@ export function Footer() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <MapPin size={16} className="mr-2 mt-1 flex-shrink-0 text-accent" />
-                <span className="text-sm text-stone-300">
+                <a href="https://maps.app.goo.gl/KLAHpEwzoMJKdCLLA" target="_blank" rel="noopener noreferrer" className="text-sm text-stone-300 hover:text-accent transition-colors">
                   Marine International, Ludhiana, Punjab, India
-                </span>
+                </a>
               </li>
               <li className="flex items-center">
                 <Phone size={16} className="mr-2 flex-shrink-0 text-accent" />
-                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`} className="text-sm text-stone-300 hover:text-accent transition-colors">
-                  {process.env.NEXT_PUBLIC_PHONE_NUMBER}
+                <a href="tel:+91-9876333111" className="text-sm text-stone-300 hover:text-accent transition-colors">
+                  +91-9876333111
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2 flex-shrink-0 text-accent" />
-                <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} className="text-sm text-stone-300 hover:text-accent transition-colors">
-                  {process.env.NEXT_PUBLIC_EMAIL}
+                <a href="mailto:chocodew@gmail.com" className="text-sm text-stone-300 hover:text-accent transition-colors">
+                  chocodew@gmail.com
                 </a>
               </li>
-              <li className="flex items-center">
-                <Chrome size={16} className="mr-2 flex-shrink-0 text-accent" />
-                <a href={process.env.NEXT_PUBLIC_SITE_URL} className="text-sm text-stone-300 hover:text-accent transition-colors">
-                  chocodew.com
-                </a>
-              </li>
+
             </ul>
           </div>
         </div>

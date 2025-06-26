@@ -16,10 +16,10 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[]
   className?: string
+  activeItemName: string
 }
 
-export function NavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
+export function NavBar({ items, className, activeItemName }: NavBarProps) {
   const [isMobile, setIsMobile] = useState(false)
   const router = useRouter()
 
@@ -35,7 +35,6 @@ export function NavBar({ items, className }: NavBarProps) {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
     e.preventDefault()
-    setActiveTab(item.name)
     router.push(item.url, { scroll: false })
   }
 
@@ -49,7 +48,7 @@ export function NavBar({ items, className }: NavBarProps) {
       <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative">
         {items.map((item) => {
           const Icon = item.icon
-          const isActive = activeTab === item.name
+          const isActive = activeItemName === item.name
 
           return (
             <Link
