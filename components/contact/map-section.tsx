@@ -1,5 +1,7 @@
 "use client";
 
+import GoogleMap from "@/components/contact/google-map";
+
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -53,16 +55,7 @@ export function MapSection() {
           {!isMapLoaded ? (
             <Skeleton className="w-full h-[300px] md:h-[400px]" />
           ) : (
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109552.19658822332!2d75.72376075!3d30.9097079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a837462345a7d%3A0x681102348ec60610!2sLudhiana%2C%20Punjab!5e0!3m2!1sen!2sin!4v1653379178550!5m2!1sen!2sin"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Chocodew Location"
-            ></iframe>
+            <GoogleMap lat={30.92104573419443} lng={75.84921191201626} />
           )}
         </CardContent>
       </Card>
