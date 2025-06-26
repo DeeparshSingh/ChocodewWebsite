@@ -59,21 +59,21 @@ export function CalculatorResult({
               <h4 className="text-sm font-medium text-muted-foreground mb-1">
                 Monthly Consumption
               </h4>
-              <p className="text-3xl font-bold">{cupsPerMonth}</p>
+              <p className="text-2xl md:text-3xl font-bold">{cupsPerMonth}</p>
               <p className="text-sm">cups</p>
             </div>
             <div className="p-4 rounded-lg bg-background shadow-sm">
               <h4 className="text-sm font-medium text-muted-foreground mb-1">
                 Premix Required
               </h4>
-              <p className="text-3xl font-bold">{roundedBags}</p>
+              <p className="text-2xl md:text-3xl font-bold">{roundedBags}</p>
               <p className="text-sm">kg per month</p>
             </div>
             <div className="p-4 rounded-lg bg-background shadow-sm">
               <h4 className="text-sm font-medium text-muted-foreground mb-1">
                 Recommended Order
               </h4>
-              <p className="text-3xl font-bold text-primary">
+              <p className="text-2xl md:text-3xl font-bold text-primary">
                 {recommendedBags}
               </p>
               <p className="text-sm">kg (with 20% buffer)</p>
@@ -82,7 +82,7 @@ export function CalculatorResult({
 
           <div className="bg-primary/5 p-4 rounded-lg">
             <h4 className="font-medium mb-2">Calculation Details:</h4>
-            <ul className="space-y-1">
+            <ul className="space-y-1 break-words">
               <li>Beverage Type: {premixType}</li>
               <li>Premix per cup: {gramsPerCup}g</li>
               <li>
