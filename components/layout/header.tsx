@@ -78,9 +78,9 @@ export function Header() {
             <button
               key={item.name}
               className={cn(
-                "relative text-sm font-medium transition-colors duration-300",
+                "relative text-sm font-medium transition-colors duration-300 px-3 py-2",
                 (pathname === item.href && item.href === '/' && !isScrolled) ? "text-white"
-                : pathname === item.href ? "text-primary"
+                : pathname === item.href ? "text-primary font-semibold"
                 : "text-muted-foreground hover:text-primary"
               )}
               onClick={() => handleNavigation(item.href)}
@@ -88,14 +88,10 @@ export function Header() {
               {item.name}
               {pathname === item.href && (
                 <motion.span
-                  layoutId="underline"
-                  className={cn(
-                    "absolute left-0 right-0 bottom-0 h-0.5",
-                    (pathname === item.href && item.href === '/' && !isScrolled) ? "bg-white" : "bg-primary"
-                  )}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
+                  className="absolute left-3 right-3 bottom-1 h-0.5 bg-primary"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                 />
               )}
             </button>

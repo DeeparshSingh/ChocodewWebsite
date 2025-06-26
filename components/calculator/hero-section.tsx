@@ -83,8 +83,16 @@ export function HeroSection({
             {actions.map((action, index) => {
               if (action.text === "Start Calculating") {
                 return (
-                  <div key={index} className="flex flex-col items-center">
-                    {/* Pill-shaped box with increased padding */}
+                  <button
+                    key={index}
+                    className="flex flex-col items-center group focus:outline-none"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector(action.href)?.scrollIntoView({
+                        behavior: 'smooth'
+                      });
+                    }}
+                  >
                     <div
                       className="
                         flex items-center justify-center
@@ -92,7 +100,9 @@ export function HeroSection({
                         backdrop-blur-md
                         border border-foreground/10
                         shadow-lg rounded-full
-                        px-6 py-3   /* increased padding */
+                        px-6 py-3
+                        transition-all duration-300
+                        group-hover:shadow-xl group-hover:-translate-y-1
                       "
                     >
                       <span className="text-lg font-medium text-primary">
@@ -100,9 +110,8 @@ export function HeroSection({
                       </span>
                     </div>
 
-                    {/* Larger animated scroll icon, more space below box */}
                     <ChevronsDown className="h-8 w-8 mt-4 animate-bounce text-primary" />
-                  </div>
+                  </button>
                 );
               } else {
                 // Original button rendering logic for other actions

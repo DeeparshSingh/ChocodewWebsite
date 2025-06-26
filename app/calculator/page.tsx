@@ -28,7 +28,7 @@ export default function CalculatorPage() {
           alt: ""
         }}
       >
-        <div id="calculator" className="w-full mx-auto p-6 max-w-lg">
+        <div id="calculator" className="w-full mx-auto p-6 max-w-lg scroll-mt-24">
           <CalculatorForm />
         </div>
       </HeroSection>
