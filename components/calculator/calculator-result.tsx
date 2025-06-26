@@ -40,12 +40,12 @@ export function CalculatorResult({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
       className="w-full"
     >
-      <Card className="w-full max-w-[22rem] sm:max-w-lg mx-auto border-accent/30 bg-gradient-to-br from-secondary/20 to-background">
+      <Card className="w-full border-accent/30 bg-gradient-to-br from-secondary/20 to-background">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Coffee className="h-6 w-6 text-primary" />
