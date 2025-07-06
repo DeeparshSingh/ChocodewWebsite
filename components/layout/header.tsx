@@ -61,11 +61,11 @@ export function Header() {
             onClick={() => handleNavigation("/")}
           >
             <Image
-              src={pathname === '/' && !isScrolled ? "/icons/chocodew logo white.png" : "/icons/chocodew logo brown.png"}
+              src={pathname === '/' && !isScrolled ? "/icons/chocodew-logo-white.png" : "/icons/chocodew-logo-brown.png"}
               alt="Chocodew logo"
               width={200}
               height={25}
-              className={cn("w-[250px] h-[50px] transition-transform duration-300 group-hover:scale-110 object-fill", isScrolled ? "" : "")}
+              className={cn("w-[250px] h-[60px] transition-transform duration-300 group-hover:scale-110 object-fill", isScrolled ? "" : "")}
               priority
             />
           </button>
