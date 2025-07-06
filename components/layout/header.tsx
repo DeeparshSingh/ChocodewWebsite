@@ -57,7 +57,7 @@ export function Header() {
           transition={{ duration: 0.3 }}
         >
           <button 
-            className="flex items-center gap-2 px-0 group"
+            className="flex items-center gap-2 px-0 group -ml-8 md:-ml-16"
             onClick={() => handleNavigation("/")}
           >
             <Image
