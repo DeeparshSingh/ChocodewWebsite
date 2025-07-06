@@ -99,7 +99,7 @@ export function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden hover:bg-primary/10"
+          className={cn("md:hidden hover:bg-primary/10", isScrolled ? "text-foreground" : "text-white")}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -120,7 +120,10 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-t border-white/20"
+            className={cn(
+              "md:hidden border-t border-white/20 backdrop-blur-xl",
+              isScrolled ? "bg-white/80 dark:bg-stone-900/80" : "bg-transparent"
+            )}
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
               {navItems.map((item) => (
