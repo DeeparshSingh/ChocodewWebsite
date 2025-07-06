@@ -20,6 +20,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const activeScrolled = isScrolled || mobileMenuOpen;
   const router = useRouter();
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export function Header() {
     <motion.header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 ease-in-out",
-        isScrolled
+        activeScrolled
           ? "bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-lg py-2 after:absolute after:inset-0 after:border after:border-white/20 after:rounded-2xl after:-z-10"
           : "bg-transparent py-3"
       )}
@@ -61,7 +62,7 @@ export function Header() {
             onClick={() => handleNavigation("/")}
           >
             <Image
-              src={pathname === '/' && !isScrolled ? "/icons/chocodew-logo-white.png" : "/icons/chocodew-logo-brown.png"}
+              src={pathname === '/' && !activeScrolled ? "/icons/chocodew-logo-white.png" : "/icons/chocodew-logo-brown.png"}
               alt="Chocodew logo"
               width={200}
               height={25}
@@ -77,7 +78,7 @@ export function Header() {
               key={item.name}
               className={cn(
                 "relative text-sm font-medium transition-colors duration-300 px-3 py-2",
-                (pathname === item.href && item.href === '/' && !isScrolled) ? "text-white"
+                (pathname === item.href && item.href === '/' && !activeScrolled) ? "text-white"
                 : pathname === item.href ? "text-primary font-semibold"
                 : "text-muted-foreground hover:text-primary"
               )}
@@ -99,7 +100,7 @@ export function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className={cn("md:hidden hover:bg-primary/10", isScrolled ? "text-foreground" : "text-white")}
+          className={cn("md:hidden hover:bg-primary/10", activeScrolled ? "text-foreground" : "text-white")}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -122,7 +123,7 @@ export function Header() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className={cn(
               "md:hidden border-t border-white/20 backdrop-blur-xl",
-              isScrolled ? "bg-white/80 dark:bg-stone-900/80" : "bg-transparent"
+              activeScrolled ? "bg-white/80 dark:bg-stone-900/80" : "bg-transparent"
             )}
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
@@ -136,7 +137,7 @@ export function Header() {
                   <button
                     className={cn(
                       "w-full text-left px-4 py-3 text-sm font-medium transition-colors duration-300",
-                      (pathname === item.href && item.href === '/' && !isScrolled) ? "text-white"
+                      (pathname === item.href && item.href === '/' && !activeScrolled) ? "text-white"
                       : pathname === item.href ? "text-primary"
                       : "text-foreground hover:text-primary"
                     )}

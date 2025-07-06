@@ -8,23 +8,23 @@ import { Coffee, Award, Truck, HeartHandshake } from "lucide-react";
 const valueProps = [
   {
     icon: <Coffee className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
-    title: "Premium Quality",
-    description: "Our beverage mixes are crafted from the finest ingredients to ensure exceptional taste and aroma in every cup."
+    title: "Exceptional Quality",
+    description: "Every ingredient vetted, every cup consistent."
   },
   {
     icon: <Award className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
     title: "ISO 9001:2015 Certified",
-    description: "Our rigorous quality management system ensures consistent excellence in all our products and services."
+    description: "Globally recognised standards. Locally perfected."
   },
   {
     icon: <Truck className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
-    title: "Reliable Service",
-    description: "Prompt installation, regular maintenance, and timely supplies keep your vending operations running smoothly."
+    title: "Uninterrupted Performance",
+    description: "Installation, maintenance, supplies—handled, hassle-free."
   },
   {
     icon: <HeartHandshake className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
-    title: "Customer Focused",
-    description: "Our dedicated team provides personalized support and solutions tailored to your specific requirements."
+    title: "Seamless Experience",
+    description: "Effortless setup. Smooth operation. Pure satisfaction."
   }
 ];
 
@@ -71,13 +71,13 @@ export function ValueProps() {
           {valueProps.map((prop, index) => (
             <motion.div key={index} variants={cardVariants}>
               <Card className="card-hover h-full border-none shadow-md">
-                <CardHeader className="pb-2 flex flex-col items-center text-center space-y-2 md:space-y-3 p-3 md:p-6">
+                <CardHeader className="pb-1 flex flex-col items-center text-center space-y-2 md:space-y-2 p-3 md:p-5">
                   <div className="p-2 md:p-3 rounded-full bg-primary/10">
                     {prop.icon}
                   </div>
                   <CardTitle className="text-base md:text-lg">{prop.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-center px-3 pb-4">
+                <CardContent className="text-center px-3 pt-2 pb-4">
                   <p className="text-xs md:text-sm text-muted-foreground">{prop.description}</p>
                 </CardContent>
               </Card>
