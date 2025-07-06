@@ -25,9 +25,9 @@ export function TestimonialStrip() {
           {duplicatedTestimonials.map((testimonial, index) => (
             <Card 
               key={`${testimonial.id}-${index}`} 
-              className="flex-shrink-0 w-[250px] md:w-[300px] shadow-sm border-none bg-white"
+              className="flex-shrink-0 w-[190px] sm:w-[220px] md:w-[300px] shadow-sm border-none bg-white"
             >
-              <CardContent className="p-4 md:p-6">
+              <CardContent className="p-3 sm:p-4 md:p-6">
                 <div className="flex items-center mb-3">
                   {[...Array(5)].map((_, i) => (
                     <Star 

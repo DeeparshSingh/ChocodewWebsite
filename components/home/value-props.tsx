@@ -71,13 +71,13 @@ export function ValueProps() {
           {valueProps.map((prop, index) => (
             <motion.div key={index} variants={cardVariants}>
               <Card className="card-hover h-full border-none shadow-md">
-                <CardHeader className="pb-1 flex flex-col items-center text-center space-y-2 md:space-y-2 p-3 md:p-5">
+                <CardHeader className="pb-0 flex flex-col items-center text-center space-y-1 md:space-y-1 p-3 md:p-5">
                   <div className="p-2 md:p-3 rounded-full bg-primary/10">
                     {prop.icon}
                   </div>
                   <CardTitle className="text-base md:text-lg">{prop.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-center px-3 pt-2 pb-4">
+                <CardContent className="text-center px-3 pt-0 pb-4">
                   <p className="text-xs md:text-sm text-muted-foreground">{prop.description}</p>
                 </CardContent>
               </Card>
