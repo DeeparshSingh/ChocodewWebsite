@@ -2,7 +2,8 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Coffee, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -41,7 +42,7 @@ export function Header() {
         "fixed top-0 w-full z-50 transition-all duration-300 ease-in-out",
         isScrolled
           ? "bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-lg py-2 after:absolute after:inset-0 after:border after:border-white/20 after:rounded-2xl after:-z-10"
-          : "bg-transparent py-5"
+          : "bg-transparent py-3"
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -59,17 +60,14 @@ export function Header() {
             className="flex items-center gap-2 px-0 group"
             onClick={() => handleNavigation("/")}
           >
-            <Coffee 
-              size={32} 
-              className={cn(
-                "transition-transform duration-300 group-hover:scale-110",
-                pathname === '/' && !isScrolled ? "text-white" : "text-primary"
-              )} 
+            <Image
+              src={pathname === '/' && !isScrolled ? "/icons/chocodew logo white.png" : "/icons/chocodew logo brown.png"}
+              alt="Chocodew logo"
+              width={200}
+              height={25}
+              className={cn("w-[250px] h-[50px] transition-transform duration-300 group-hover:scale-110 object-fill", isScrolled ? "" : "")}
+              priority
             />
-            <span className={cn(
-              "font-playfair font-bold text-2xl transition-colors duration-300 group-hover:text-primary",
-              pathname === '/' && !isScrolled ? "text-white" : "text-foreground"
-            )}>Chocodew</span>
           </button>
         </motion.div>
 
