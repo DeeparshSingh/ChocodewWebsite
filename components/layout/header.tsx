@@ -66,7 +66,7 @@ export function Header() {
               alt="Chocodew logo"
               width={200}
               height={25}
-              className={cn("w-[275px] h-[55px] transition-transform duration-300 group-hover:scale-110 object-fill", isScrolled ? "" : "")}
+              className={cn("w-[250px] h-[65px] transition-transform duration-300 group-hover:scale-110 object-fill", isScrolled ? "" : "")}
               priority
             />
           </button>

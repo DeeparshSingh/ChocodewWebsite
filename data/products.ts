@@ -68,7 +68,7 @@ export const products: Product[] = [
     slug: "coffee-vending-machine-4-option",
     category: "machines",
     images: [
-      "https://placehold.co/600x600?text=Coffee+VM+4+Option"
+      "/products/chocodew-4-options-vending-machine-right.jpg"
     ],
     shortDescription: "Versatile four-option beverage vending machine with intuitive controls.",
     description: "Elevate your coffee break, offering four carefully crafted beverage selections designed for bustling environments. Its seamless operation and contemporary aesthetics make it a favorite for offices, institutions, and exhibition venues.",

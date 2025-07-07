@@ -30,7 +30,7 @@ export default function ProductsPage() {
         </motion.div>
       </AuroraBackground>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-5xl mx-auto px-4 py-12">
         <ProductTabs />
       </div>
     </div>
