@@ -19,7 +19,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <>
       <Card className="card-hover overflow-hidden h-full flex flex-col mx-auto w-[90%] sm:w-full">
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+        <div className="relative aspect-square w-full overflow-hidden bg-muted">
           <Link href={`/products/${product.slug}`}>
             <Image
               src={product.images && product.images.length > 0 ? product.images[0] : '/placeholder-image.jpg'} // Use first image or a placeholder
@@ -45,16 +45,6 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.shortDescription}
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-3 md:p-4 pt-2 flex-grow">
-          <div className="mt-2 space-y-1">
-            {product.specs.slice(0, 3).map((spec, index) => (
-              <div key={index} className="flex items-center text-xs md:text-sm">
-                <span className="text-muted-foreground w-16 md:w-20 flex-shrink-0">{spec.name}:</span>
-                <span className="font-medium">{spec.value}</span>
-              </div>
-            ))}
-          </div>
-        </CardContent>
         <CardFooter className="p-3 md:p-4 pt-0">
           <div className="flex justify-between w-full gap-2">
             <Button asChild variant="outline" size="sm" className="flex-1">

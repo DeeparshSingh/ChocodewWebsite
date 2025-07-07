@@ -1,215 +1,214 @@
 import { Product } from "@/types/product";
 
 export const products: Product[] = [
-  {
-    id: "vm-001",
-    name: "Elite Series 5000",
-    slug: "elite-series-5000",
-    category: "machines",
-    images: [
-      "https://placehold.co/600x600/EAB308/000000?text=Product+Image+1",
-      "https://placehold.co/600x600/3B82F6/FFFFFF?text=Product+Image+2",
-      "https://placehold.co/600x600/10B981/FFFFFF?text=Product+Image+3",
-      "https://placehold.co/600x600/6366F1/FFFFFF?text=Product+Image+4",
-      "https://placehold.co/600x600/EC4899/FFFFFF?text=Product+Image+5",
-      "https://placehold.co/600x600/F59E0B/000000?text=Product+Image+6",
-      "https://placehold.co/600x600/84CC16/000000?text=Product+Image+7",
-      "https://placehold.co/600x600/0EA5E9/FFFFFF?text=Product+Image+8",
-      "https://placehold.co/600x600/D946EF/FFFFFF?text=Product+Image+9",
-      "https://placehold.co/600x600/F97316/FFFFFF?text=Product+Image+10",
-      "https://placehold.co/600x600/A855F7/FFFFFF?text=Product+Image+11",
-      "https://placehold.co/600x600/22C55E/FFFFFF?text=Product+Image+12",
-      "https://placehold.co/600x600/8B5CF6/FFFFFF?text=Product+Image+13"
-    ],
-    shortDescription: "Premium 8-option hot beverage vending machine with customizable settings.",
-    description: "The Elite Series 5000 is our flagship vending machine, offering 8 premium beverage options with fully customizable settings. Its sleek design and user-friendly interface make it perfect for corporate environments, hotels, and high-traffic areas.",
-    featured: true,
-    specs: [
-      { name: "Dimensions", value: "180 x 60 x 60 cm" },
-      { name: "Capacity", value: "500+ cups" },
-      { name: "Power", value: "220-240V, 2400W" },
-      { name: "Options", value: "8 beverages" },
-      { name: "Water", value: "Direct connection" },
-      { name: "Material", value: "Stainless steel" },
-    ],
-    features: [
-      "8 premium beverage options",
-      "Customizable strength and sugar settings",
-      "7-inch touchscreen display",
-      "Remote monitoring and management",
-      "Auto-cleaning function",
-      "Energy-saving mode",
-      "Low ingredient alerts",
-      "Usage statistics and reporting"
-    ],
-    detailsText: "The Elite Series 5000 is designed for environments where quality and variety are paramount. It features state-of-the-art brewing technology that ensures consistent taste and aroma with every cup. The machine can be connected directly to a water line and includes an internal filter system. Its sleek stainless steel exterior complements any modern décor."
-  },
+  // ——— MACHINES ———
   {
     id: "vm-002",
-    name: "Compact Pro 3000",
-    slug: "compact-pro-3000",
+    name: "Coffee Vending Machine 2 Option",
+    slug: "coffee-vending-machine-2-option",
     category: "machines",
-    images: ["https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Space-efficient vending machine with 6 beverage options, ideal for offices.",
-    description: "The Compact Pro 3000 is designed for spaces where footprint matters but quality can't be compromised. With 6 beverage options and a sleek design, it's perfect for small to medium offices, clinics, and retail spaces.",
-    featured: true,
+    images: [
+      "https://placehold.co/600x600?text=Coffee+VM+2+Option"
+    ],
+    shortDescription: "Compact, sleek vending machine offering two perfect beverage options.",
+    description: "This machine combines elegance with simplicity, delivering two flawless beverage choices at the touch of a button. Designed for smaller offices and intimate settings, its intuitive design ensures quality and ease, every cup.",
+    featured: false,
     specs: [
       { name: "Dimensions", value: "120 x 45 x 50 cm" },
-      { name: "Capacity", value: "300+ cups" },
-      { name: "Power", value: "220-240V, 1800W" },
-      { name: "Options", value: "6 beverages" },
-      { name: "Water", value: "Direct/Tank (20L)" },
-      { name: "Material", value: "ABS/Metal" },
+      { name: "Capacity", value: "150 cups" },
+      { name: "Power", value: "220–240 V, 1500 W" },
+      { name: "Options", value: "2 beverages" },
+      { name: "Water Supply", value: "Tank or direct connection" },
+      { name: "Material", value: "Stainless steel & ABS" }
     ],
     features: [
-      "6 beverage options",
-      "Dual water supply system (direct or tank)",
-      "Digital display with intuitive controls",
-      "Programmable timers",
-      "Self-diagnostic system",
-      "Quick heat-up technology",
-      "Whisper-quiet operation",
-      "Eco-friendly design"
+      "Two preset beverage options",
+      "Quick-brew technology for fast service",
+      "User-friendly button interface",
+      "Compact footprint for small spaces",
+      "Energy-saving standby mode",
+      "Easy-to-clean design",
+      "Removable drip tray",
+      "Low-noise operation"
     ]
   },
   {
     id: "vm-003",
-    name: "BaristaPro X1",
-    slug: "barista-pro-x1",
+    name: "Coffee Vending Machine 3 Option",
+    slug: "coffee-vending-machine-3-option",
     category: "machines",
-    images: ["https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Commercial-grade coffee machine with fresh bean grinding capabilities.",
-    description: "The BaristaPro X1 brings café-quality coffee to any environment. With its integrated bean grinder, this machine delivers freshly ground coffee with every cup, offering an authentic coffee experience for discerning customers.",
-    featured: true,
+    images: [
+      "https://placehold.co/600x600?text=Coffee+VM+3+Option"
+    ],
+    shortDescription: "Stylish three-option vending machine for versatile beverage experiences.",
+    description: "Your versatile companion, offering three distinct beverage options tailored for diverse tastes. Ideal for medium-sized workplaces and reception areas, it promises consistent, premium quality with every pour.",
+    featured: false,
     specs: [
-      { name: "Dimensions", value: "150 x 55 x 65 cm" },
-      { name: "Capacity", value: "350+ cups" },
-      { name: "Power", value: "220-240V, 2200W" },
-      { name: "Options", value: "12 beverages" },
-      { name: "Bean Hopper", value: "2 x 1kg" },
-      { name: "Material", value: "Stainless steel" },
+      { name: "Dimensions", value: "140 x 50 x 55 cm" },
+      { name: "Capacity", value: "250 cups" },
+      { name: "Power", value: "220–240 V, 1800 W" },
+      { name: "Options", value: "3 beverages" },
+      { name: "Water Supply", value: "Direct connection" },
+      { name: "Material", value: "Stainless steel" }
     ],
     features: [
-      "Fresh bean grinding for each cup",
-      "12 gourmet coffee options",
-      "Dual bean hoppers for variety",
-      "Milk frother for specialty drinks",
-      "Adjustable grind settings",
-      "One-touch clean function",
-      "User preference memory",
-      "Professional-grade components"
+      "Three selectable drink choices",
+      "Digital display with selection dial",
+      "Programmable strength settings",
+      "Self-cleaning function",
+      "Rapid heating system",
+      "Compact, stylish design",
+      "Automatic refill alerts",
+      "Remote diagnostics support"
     ]
   },
   {
     id: "vm-004",
-    name: "TeaMaster 2000",
-    slug: "tea-master-2000",
+    name: "Coffee Vending Machine 4 Option",
+    slug: "coffee-vending-machine-4-option",
     category: "machines",
-    images: ["https://images.pexels.com/photos/6207297/pexels-photo-6207297.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Specialized tea vending machine with precise temperature control.",
-    description: "The TeaMaster 2000 is specifically designed for tea enthusiasts, offering a range of tea options with precise temperature control to ensure the perfect brew. Ideal for environments where tea is the preferred beverage.",
-    featured: false,
+    images: [
+      "https://placehold.co/600x600?text=Coffee+VM+4+Option"
+    ],
+    shortDescription: "Versatile four-option beverage vending machine with intuitive controls.",
+    description: "Elevate your coffee break, offering four carefully crafted beverage selections designed for bustling environments. Its seamless operation and contemporary aesthetics make it a favorite for offices, institutions, and exhibition venues.",
+    featured: true,
     specs: [
-      { name: "Dimensions", value: "130 x 50 x 55 cm" },
-      { name: "Capacity", value: "400+ cups" },
-      { name: "Power", value: "220-240V, 1600W" },
-      { name: "Options", value: "8 tea varieties" },
-      { name: "Water", value: "Direct connection" },
-      { name: "Material", value: "ABS/Stainless" },
+      { name: "Dimensions", value: "160 x 55 x 60 cm" },
+      { name: "Capacity", value: "400 cups" },
+      { name: "Power", value: "220–240 V, 2000 W" },
+      { name: "Options", value: "4 beverages" },
+      { name: "Water Supply", value: "Direct connection" },
+      { name: "Material", value: "Stainless steel & glass" }
     ],
     features: [
-      "8 premium tea options",
-      "Precise temperature control for different tea types",
-      "Adjustable brewing time",
-      "Real leaf tea brewing technology",
-      "Milk addition option",
-      "Sugar dispensing system",
-      "Quick-serve function",
-      "Easy maintenance design"
+      "Four customizable beverage options",
+      "Touchscreen interface",
+      "Adjustable cup sizes",
+      "Automatic cleaning cycles",
+      "Energy-efficient heating",
+      "Real-time usage statistics",
+      "Mobile app monitoring",
+      "Secure access for ingredient refills"
     ]
   },
   {
-    id: "pm-001",
-    name: "Premium Coffee Blend",
-    slug: "premium-coffee-blend",
-    category: "premixes",
-    images: ["https://images.pexels.com/photos/6941024/pexels-photo-6941024.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Rich and aromatic instant coffee premix with creamer and sugar.",
-    description: "Our Premium Coffee Blend offers a rich, aromatic experience with every cup. This carefully crafted formula combines high-quality coffee with the perfect amount of creamer and sugar for a consistently delicious beverage.",
+    id: "vm-007",
+    name: "Coffee Vending Machine 7 Option",
+    slug: "coffee-vending-machine-7-option",
+    category: "machines",
+    images: [
+      "https://placehold.co/600x600?text=Coffee+VM+7+Option"
+    ],
+    shortDescription: "Premium vending machine offering seven exceptional beverage options.",
+    description: "Sets the gold standard for vending solutions, boasting seven customizable beverage options to satisfy every preference. Perfectly designed for large offices, hotels, and high-footfall environments, it promises reliability, sophistication, and superior taste.",
     featured: true,
     specs: [
-      { name: "Weight", value: "1kg bag" },
-      { name: "Yield", value: "~100 cups" },
-      { name: "Ingredients", value: "Coffee, creamer, sugar" },
-      { name: "Shelf Life", value: "12 months" },
-      { name: "Storage", value: "Cool, dry place" },
-      { name: "Per Cup", value: "10g" },
+      { name: "Dimensions", value: "180 x 60 x 60 cm" },
+      { name: "Capacity", value: "700 cups" },
+      { name: "Power", value: "220–240 V, 2500 W" },
+      { name: "Options", value: "7 beverages" },
+      { name: "Water Supply", value: "Direct connection with filtration" },
+      { name: "Material", value: "Stainless steel & tempered glass" }
     ],
     features: [
-      "Rich, aromatic flavor profile",
-      "Consistent taste in every cup",
-      "Dissolves instantly in hot water",
-      "No clumping or residue",
-      "Vacuum-sealed packaging",
-      "No artificial flavors",
-      "Works in all standard vending machines",
-      "Economical cost per cup"
+      "Seven gourmet drink selections",
+      "Intuitive full-color touchscreen",
+      "Customizable cup strength and size",
+      "Automatic cleaning & maintenance alerts",
+      "High-capacity internal water reservoir",
+      "Advanced bean-to-cup brewing",
+      "Cloud connectivity for remote management",
+      "Eco-friendly power-saving modes"
+    ]
+  },
+
+  // ——— PREMIXES ———
+  {
+    id: "pm-001",
+    name: "Premium Instant Coffee",
+    slug: "premium-instant-coffee",
+    category: "premixes",
+    images: [
+      "https://placehold.co/600x600?text=Premium+Instant+Coffee"
+    ],
+    shortDescription: "Bold, aromatic instant coffee blend for the perfect cup every time.",
+    description: "Crafted for coffee lovers, our Premium Instant Coffee offers a robust and satisfying flavor instantly. Available in regular and low-sugar varieties, it delivers consistent excellence in every sip.",
+    featured: true,
+    specs: [
+      { name: "Weight", value: "1 kg bag" },
+      { name: "Yield", value: "≈ 100 cups" },
+      { name: "Ingredients", value: "100% instant coffee" },
+      { name: "Variants", value: "Regular & Low Sugar" },
+      { name: "Shelf Life", value: "12 months" },
+      { name: "Storage", value: "Cool, dry place" }
+    ],
+    features: [
+      "Rich, robust coffee aroma",
+      "Smooth and balanced taste",
+      "Dissolves instantly, no residue",
+      "Available in low sugar variant",
+      "Perfect for vending machines",
+      "Vacuum-sealed for freshness",
+      "No artificial additives"
     ]
   },
   {
     id: "pm-002",
-    name: "Classic Tea Premix",
-    slug: "classic-tea-premix",
+    name: "Masala Tea Premix",
+    slug: "masala-tea-premix",
     category: "premixes",
-    images: ["https://images.pexels.com/photos/5946646/pexels-photo-5946646.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Traditional Indian tea premix with milk and sugar.",
-    description: "Our Classic Tea Premix captures the authentic taste of traditional Indian tea, complete with milk and sugar. Perfect for those who appreciate a robust, flavorful cup of tea without the preparation time.",
-    featured: false,
+    images: [
+      "https://placehold.co/600x600?text=Masala+Tea+Premix"
+    ],
+    shortDescription: "Traditional spiced tea with authentic Indian flavor in seconds.",
+    description: "Enjoy the warmth of traditional Masala Tea instantly. A delightful blend of spices infused with premium tea, crafted to provide an authentic, comforting experience—also in a healthier low sugar option.",
+    featured: true,
     specs: [
-      { name: "Weight", value: "1kg bag" },
-      { name: "Yield", value: "~140 cups" },
-      { name: "Ingredients", value: "Tea, milk solids, sugar" },
+      { name: "Weight", value: "1 kg pack" },
+      { name: "Yield", value: "≈ 80 cups" },
+      { name: "Ingredients", value: "Tea, cardamom, cinnamon, ginger" },
+      { name: "Variants", value: "Regular & Low Sugar" },
       { name: "Shelf Life", value: "12 months" },
-      { name: "Storage", value: "Cool, dry place" },
-      { name: "Per Cup", value: "7g" },
+      { name: "Storage", value: "Cool, dry place" }
     ],
     features: [
-      "Authentic Indian tea taste",
-      "Perfect balance of tea, milk, and sugar",
-      "Dissolves completely in hot water",
-      "No preparation needed",
-      "Foil-lined packaging for freshness",
-      "Consistent flavor every time",
-      "Compatible with all vending machines",
-      "Cost-effective solution"
+      "Authentic Indian spices",
+      "Rich and aromatic taste",
+      "Instantly dissolvable",
+      "Low sugar variant available",
+      "Perfect consistency every time",
+      "Ideal for vending machines",
+      "Preservative-free blend"
     ]
   },
   {
     id: "pm-003",
-    name: "Gourmet Hot Chocolate",
-    slug: "gourmet-hot-chocolate",
+    name: "Dairy Whitener",
+    slug: "dairy-whitener",
     category: "premixes",
-    images: ["https://images.pexels.com/photos/7525029/pexels-photo-7525029.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Luxurious hot chocolate premix with real cocoa and creamy texture.",
-    description: "Indulge in the rich, velvety experience of our Gourmet Hot Chocolate. Made with real cocoa and premium ingredients, this premix creates a luxurious hot beverage that's perfect for any occasion.",
+    images: [
+      "https://placehold.co/600x600?text=Dairy+Whitener"
+    ],
+    shortDescription: "Instant dairy whitener for a creamy, rich beverage experience.",
+    description: "Elevate your beverage instantly with our Dairy Whitener. Expertly formulated for smoothness and creaminess, it blends seamlessly into your tea or coffee, enhancing every sip effortlessly.",
     featured: false,
     specs: [
-      { name: "Weight", value: "1kg bag" },
-      { name: "Yield", value: "~100 cups" },
-      { name: "Ingredients", value: "Cocoa, milk solids, sugar" },
-      { name: "Shelf Life", value: "10 months" },
+      { name: "Weight", value: "1 kg bag" },
+      { name: "Yield", value: "≈ 200 servings" },
+      { name: "Ingredients", value: "Milk solids, stabilizers" },
+      { name: "Shelf Life", value: "12 months" },
       { name: "Storage", value: "Cool, dry place" },
-      { name: "Per Cup", value: "10g" },
+      { name: "Per Serving", value: "5 g" }
     ],
     features: [
-      "Made with real cocoa",
       "Rich, creamy texture",
-      "Perfect sweetness level",
-      "Dissolves easily in hot water",
+      "Instantly dissolvable",
+      "Consistent quality every serving",
+      "Ideal for coffee, tea, and desserts",
       "No artificial flavors",
-      "Consistent quality in every cup",
-      "Works in all standard vending machines",
-      "Premium chocolate experience"
+      "Long-lasting freshness",
+      "Convenient, economical choice"
     ]
   },
   {
@@ -217,83 +216,265 @@ export const products: Product[] = [
     name: "Tomato Soup Premix",
     slug: "tomato-soup-premix",
     category: "premixes",
-    images: ["https://images.pexels.com/photos/5825604/pexels-photo-5825604.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Hearty tomato soup premix with herbs and spices.",
-    description: "Our Tomato Soup Premix offers a comforting, flavorful soup experience with just hot water. Packed with the goodness of tomatoes and a perfect blend of herbs and spices, it's an ideal quick meal or snack option.",
+    images: [
+      "https://placehold.co/600x600?text=Tomato+Soup+Premix"
+    ],
+    shortDescription: "Rich and hearty instant tomato soup with real flavor.",
+    description: "Our Tomato Soup Premix offers instant warmth and comfort, blending ripe tomatoes and gentle spices for a satisfying experience. Crafted for quick preparation without compromising authentic flavor.",
     featured: false,
     specs: [
-      { name: "Weight", value: "1kg bag" },
-      { name: "Yield", value: "~125 cups" },
+      { name: "Weight", value: "1 kg bag" },
+      { name: "Yield", value: "≈ 120 cups" },
       { name: "Ingredients", value: "Tomato, herbs, spices" },
-      { name: "Shelf Life", value: "8 months" },
+      { name: "Shelf Life", value: "12 months" },
       { name: "Storage", value: "Cool, dry place" },
-      { name: "Per Cup", value: "8g" },
+      { name: "Per Cup", value: "8 g" }
     ],
     features: [
-      "Rich tomato flavor",
-      "Perfect blend of herbs and spices",
-      "Smooth, non-grainy texture",
-      "Quick preparation",
+      "Rich, hearty taste",
+      "Real tomato flavor",
+      "Smooth, velvety texture",
+      "Instantly ready",
+      "Perfect snack or starter",
       "No artificial preservatives",
-      "Satisfying as a quick meal",
-      "Compatible with soup vending machines",
-      "Economical food option"
+      "Ideal for vending machines"
     ]
   },
   {
-    id: "wd-001",
-    name: "AquaPure Dispenser",
-    slug: "aquapure-dispenser",
-    category: "dispensers",
-    images: ["https://images.pexels.com/photos/4000600/pexels-photo-4000600.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "Bottom-loading water dispenser with hot, cold, and room temperature options.",
-    description: "The AquaPure Dispenser offers convenient access to hot, cold, and room temperature water. Its bottom-loading design eliminates heavy lifting, while advanced filtration ensures pure, great-tasting water every time.",
+    id: "pm-005",
+    name: "Cappuccino Coffee Premix",
+    slug: "cappuccino-coffee-premix",
+    category: "premixes",
+    images: [
+      "https://placehold.co/600x600?text=Cappuccino+Coffee+Premix"
+    ],
+    shortDescription: "Creamy and frothy instant cappuccino with authentic café taste.",
+    description: "Savor café-style indulgence instantly with our Cappuccino Coffee Premix. Smooth, creamy, and frothy—crafted for an authentic cappuccino experience at home or office, with a healthier low sugar variant available.",
     featured: true,
     specs: [
-      { name: "Dimensions", value: "100 x 40 x 40 cm" },
-      { name: "Bottle Size", value: "Standard 20L" },
-      { name: "Power", value: "220-240V, 550W" },
-      { name: "Options", value: "Hot/Cold/Room Temp" },
-      { name: "Hot Output", value: "90-95°C" },
-      { name: "Cold Output", value: "4-10°C" },
+      { name: "Weight", value: "1 kg bag" },
+      { name: "Yield", value: "≈ 100 cups" },
+      { name: "Ingredients", value: "Instant coffee, milk powder, sugar" },
+      { name: "Variants", value: "Regular & Low Sugar" },
+      { name: "Shelf Life", value: "12 months" },
+      { name: "Storage", value: "Cool, dry place" }
     ],
     features: [
-      "Bottom-loading design",
-      "Three temperature options",
-      "Child safety lock for hot water",
-      "Energy-saving mode",
-      "LED indicators",
+      "Creamy, café-like froth",
+      "Rich espresso notes",
+      "Instantly dissolvable",
+      "Low sugar variant option",  
+      "Consistent café-quality taste",  
+      "No artificial flavors",  
+      "Vending machine compatible"
+    ]
+  },
+  {
+    id: "pm-006",
+    name: "Lemon Tea Premix",
+    slug: "lemon-tea-premix",
+    category: "premixes",
+    images: [
+      "https://placehold.co/600x600?text=Lemon+Tea+Premix"
+    ],
+    shortDescription: "Invigorating instant lemon tea, fresh and crisp in every sip.",
+    description: "Brighten your day instantly with our Lemon Tea Premix. Fresh, crisp, and perfectly balanced, it offers a refreshing and invigorating experience, perfect for any moment.",
+    featured: false,
+    specs: [
+      { name: "Weight", value: "1 kg pack" },
+      { name: "Yield", value: "≈ 120 cups" },
+      { name: "Ingredients", value: "Tea powder, lemon flavor" },
+      { name: "Shelf Life", value: "12 months" },
+      { name: "Storage", value: "Cool, dry place" },
+      { name: "Per Cup", value: "8 g" }
+    ],
+    features: [
+      "Fresh lemon flavor",
+      "Crisp and refreshing taste",
+      "Instantly dissolvable",
+      "Natural ingredients",
+      "Consistent flavor in every cup",
+      "Ideal for vending machines",
+      "Economically convenient"
+    ]
+  },
+  {
+    id: "pm-007",
+    name: "Cardamom Tea Premix",
+    slug: "cardamom-premix-tea",
+    category: "premixes",
+    images: [
+      "https://placehold.co/600x600?text=Cardamom+Premix+Tea"
+    ],
+    shortDescription: "Delightfully aromatic instant cardamom tea blend.",
+    description: "Indulge in the exotic fragrance of cardamom instantly. Our Cardamom Tea Premix blends premium tea leaves with aromatic cardamom, offering an authentic, soothing tea experience effortlessly.",
+    featured: true,
+    specs: [
+      { name: "Weight", value: "1 kg pack" },
+      { name: "Yield", value: "≈ 90 cups" },
+      { name: "Ingredients", value: "Tea powder, cardamom" },
+      { name: "Shelf Life", value: "12 months" },
+      { name: "Storage", value: "Cool, dry place" },
+      { name: "Per Cup", value: "10 g" }
+    ],
+    features: [
+      "Rich cardamom aroma",
+      "Smooth, soothing flavor",
+      "Dissolves instantly",
+      "Authentic taste",
+      "Preservative-free blend",
+      "Perfect for vending machines",
+      "Economical per serving"
+    ]
+  },
+  {
+    id: "pm-008",
+    name: "Choco Milk Premix",
+    slug: "choco-milk-premix",
+    category: "premixes",
+    images: [
+      "https://placehold.co/600x600?text=Choco+Milk+Premix"
+    ],
+    shortDescription: "Deliciously rich instant chocolate milk premix.",
+    description: "Our Choco Milk Premix combines smooth chocolate and creamy milk for an instant indulgence. Enjoy rich, chocolatey goodness with every sip—perfect for kids and adults alike.",
+    featured: false,
+    specs: [
+      { name: "Weight", value: "1 kg bag" },
+      { name: "Yield", value: "≈ 100 cups" },
+      { name: "Ingredients", value: "Milk powder, cocoa, sugar" },
+      { name: "Shelf Life", value: "12 months" },
+      { name: "Storage", value: "Cool, dry place" },
+      { name: "Per Cup", value: "10 g" }
+    ],
+    features: [
+      "Smooth, chocolate-rich taste",
+      "Instantly dissolvable",
+      "Creamy milkiness",
+      "Ideal for hot or cold beverages",
+      "No artificial flavors",
+      "Vending machine compatible",
+      "Perfect for all ages"
+    ]
+  },
+  {
+    id: "pm-009",
+    name: "Chicory Coffee Premix",
+    slug: "chicory-coffee-premix",
+    category: "premixes",
+    images: [
+      "https://placehold.co/600x600?text=Chicory+Coffee+Premix"
+    ],
+    shortDescription: "Instant coffee premix enhanced with smooth, roasted chicory.",
+    description: "Discover coffee perfection with our Chicory Coffee Premix. Expertly blended coffee and chicory offer a smooth, well-rounded taste, delivering delightful satisfaction instantly, every time.",
+    featured: false,
+    specs: [
+      { name: "Weight", value: "1 kg bag" },
+      { name: "Yield", value: "≈ 100 cups" },
+      { name: "Ingredients", value: "Instant coffee, roasted chicory" },
+      { name: "Shelf Life", value: "12 months" },
+      { name: "Storage", value: "Cool, dry place" },
+      { name: "Per Cup", value: "10 g" }
+    ],
+    features: [
+      "Smooth, balanced flavor",
+      "Enhanced with roasted chicory",
+      "Instantly dissolvable",
+      "Rich, satisfying aroma",
+      "No artificial additives",
+      "Ideal for vending machines",
+      "Economical choice"
+    ]
+  },
+
+  // ——— WATER DISPENSERS ———
+  {
+    id: "wd-001",
+    name: "Hot and Cold Water Dispenser",
+    slug: "hot-and-cold-water-dispenser",
+    category: "dispensers",
+    images: [
+      "https://placehold.co/600x600?text=Water+Dispenser+Standard"
+    ],
+    shortDescription: "Stylish dispenser offering instant access to hot and cold water.",
+    description: "Delivers instant, crystal-clear hot and cold water, ensuring convenience and freshness at home or in the office. Its sleek stainless-steel construction and reliable cooling system keep hydration effortless and enjoyable.",
+    featured: false,
+    specs: [
+      { name: "Dimensions", value: "100 x 40 x 40 cm" },
+      { name: "Capacity", value: "5 L hot, 5 L cold" },
+      { name: "Power", value: "220–240 V, 500 W" },
+      { name: "Temperatures", value: "Hot: 90–95 °C, Cold: 5–10 °C" },
+      { name: "Filtration", value: "Built-in charcoal filter" },
+      { name: "Material", value: "Stainless steel & ABS" }
+    ],
+    features: [
+      "Instant hot and cold water",
+      "Safety lock on hot water",
+      "LED temperature display",
       "Removable drip tray",
-      "Self-cleaning function",
-      "Whisper-quiet operation"
+      "Quiet cooling compressor",
+      "Energy-efficient insulation",
+      "Easy filter replacement",
+      "Compact design for home or office"
     ]
   },
   {
     id: "wd-002",
-    name: "Hydration Station Pro",
-    slug: "hydration-station-pro",
+    name: "Hot and Cold Water Dispenser Jumbo",
+    slug: "hot-and-cold-water-dispenser-jumbo",
     category: "dispensers",
-    images: ["https://images.pexels.com/photos/8478097/pexels-photo-8478097.jpeg?auto=compress&cs=tinysrgb&w=800"],
-    shortDescription: "High-capacity water dispenser for commercial environments.",
-    description: "The Hydration Station Pro is designed for high-traffic areas, offering continuous access to purified hot and cold water. With its robust construction and advanced filtration system, it's the perfect solution for offices, gyms, and public spaces.",
+    images: [
+      "https://placehold.co/600x600?text=Water+Dispenser+Jumbo"
+    ],
+    shortDescription: "High-capacity dispenser with superior cooling performance.",
+    description: "Designed for demanding environments, offering extended cooling capacity and faster temperature regulation. Its durable build and efficient thermostat ensure consistently chilled and piping hot water, ideal for high-volume usage areas.",
     featured: false,
     specs: [
       { name: "Dimensions", value: "120 x 45 x 45 cm" },
-      { name: "Capacity", value: "Direct connection" },
-      { name: "Power", value: "220-240V, 650W" },
-      { name: "Options", value: "Hot/Cold" },
-      { name: "Filtration", value: "3-stage system" },
-      { name: "Material", value: "Stainless steel" },
+      { name: "Capacity", value: "10 L hot, 10 L cold" },
+      { name: "Power", value: "220–240 V, 650 W" },
+      { name: "Temperatures", value: "Hot: 90–95 °C, Cold: 4–8 °C" },
+      { name: "Filtration", value: "Dual-stage filtration system" },
+      { name: "Material", value: "Stainless steel" }
     ],
     features: [
-      "Direct water line connection",
-      "3-stage filtration system",
-      "High-capacity hot and cold tanks",
-      "Commercial-grade components",
-      "Digital temperature control",
-      "UV sterilization",
-      "Heavy-duty construction",
-      "Easy maintenance design"
+      "High-volume dispensing",
+      "Enhanced cooling with fast recovery",
+      "Digital temperature controls",
+      "Overheat protection",
+      "Large capacity water tanks",
+      "Removable drip tray",
+      "Stainless steel reservoir",
+      "Low-maintenance design"
+    ]
+  },
+  {
+    id: "wd-003",
+    name: "Hot and Cold Water Dispenser with Fridge",
+    slug: "hot-and-cold-water-dispenser-with-fridge",
+    category: "dispensers",
+    images: [
+      "https://placehold.co/600x600?text=Water+Dispenser+with+Fridge"
+    ],
+    shortDescription: "Multi-functional dispenser with integrated refrigeration compartment.",
+    description: "Combines a premium hot and cold water dispenser with an integrated mini-fridge, perfect for keeping beverages and snacks fresh. Its innovative design makes it an ideal solution for offices, waiting rooms, and hospitality spaces.",
+    featured: true,
+    specs: [
+      { name: "Dimensions", value: "120 x 50 x 50 cm" },
+      { name: "Capacity", value: "5 L hot, 5 L cold; 20 L fridge" },
+      { name: "Power", value: "220–240 V, 700 W" },
+      { name: "Temperatures", value: "Hot: 90–95 °C, Cold: 5–10 °C; Fridge: 2–8 °C" },
+      { name: "Filtration", value: "Sediment & charcoal filter" },
+      { name: "Material", value: "Stainless steel & glass door" }
+    ],
+    features: [
+      "Integrated mini refrigerator",
+      "Dual hot and cold dispensing",
+      "Adjustable thermostat for fridge",
+      "Transparent fridge door",
+      "Safety lock on hot tap",
+      "LED lighting inside fridge",
+      "Easy-to-clean surfaces",
+      "Energy-saving compressor"
     ]
   }
 ];
