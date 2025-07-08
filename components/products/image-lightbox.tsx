@@ -43,7 +43,7 @@ export function ImageLightbox({ src, alt, open, onOpenChange }: ImageLightboxPro
         >
         <div
           ref={wrapperRef}
-          className="relative w-[90vw] h-[80vh] sm:w-full sm:max-w-[90vw] sm:max-h-[90vh] flex flex-col items-center" style={{borderRadius:'0.5rem', overflow:'hidden'}}
+          className="relative w-[90vw] sm:w-full sm:max-w-[90vw] max-h-[90vh] flex flex-col items-center" style={{borderRadius:'0.5rem', overflow:'hidden'}}
           aria-label="Image lightbox"
         >
           {/* Close button */}
@@ -74,7 +74,7 @@ export function ImageLightbox({ src, alt, open, onOpenChange }: ImageLightboxPro
               resetTransform: () => void;
             }) => (
               <>
-                <div className="mb-3 flex gap-3 items-center absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
+                <div className="flex gap-3 items-center mt-4 md:mt-0 md:absolute md:bottom-3 md:left-1/2 md:-translate-x-1/2 md:z-10">
                   <button
                     aria-label="Zoom in"
                     onClick={(e) => { e.stopPropagation(); zoomIn(); }}
