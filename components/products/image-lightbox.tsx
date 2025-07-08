@@ -74,7 +74,7 @@ export function ImageLightbox({ src, alt, open, onOpenChange }: ImageLightboxPro
               resetTransform: () => void;
             }) => (
               <>
-                <div className="flex gap-3 items-center mt-4 md:mt-0 md:absolute md:bottom-3 md:left-1/2 md:-translate-x-1/2 md:z-10">
+                <div className="flex gap-3 items-center order-2 mt-4 md:order-none md:mt-0 md:absolute md:bottom-3 md:left-1/2 md:-translate-x-1/2 md:z-10">
                   <button
                     aria-label="Zoom in"
                     onClick={(e) => { e.stopPropagation(); zoomIn(); }}
