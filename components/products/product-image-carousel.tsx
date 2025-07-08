@@ -13,9 +13,10 @@ interface ProductImageCarouselProps {
   images: string[];
   altText: string;
   options?: CarouselOptions;
+  onMainImageClick?: () => void;
 }
 
-export function ProductImageCarousel({ images, altText, options }: ProductImageCarouselProps) {
+export function ProductImageCarousel({ images, altText, options, onMainImageClick }: ProductImageCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -58,7 +59,11 @@ export function ProductImageCarousel({ images, altText, options }: ProductImageC
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {images.map((src, index) => (
-              <div className="flex-[0_0_100%] min-w-0 relative aspect-square" key={`main-${index}`}>
+              <div
+                className="flex-[0_0_100%] min-w-0 relative aspect-square cursor-zoom-in"
+                key={`main-${index}`}
+                onClick={() => index === selectedIndex && onMainImageClick?.()}
+              >
                 <Image
                   src={src}
                   alt={`${altText} - image ${index + 1}`}

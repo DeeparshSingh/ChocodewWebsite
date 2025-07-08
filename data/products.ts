@@ -8,7 +8,8 @@ export const products: Product[] = [
     slug: "coffee-vending-machine-2-option",
     category: "machines",
     images: [
-      "https://placehold.co/600x600?text=Coffee+VM+2+Option"
+      "/images/products/machines/chocodew-2-options-vending-machine-right.jpg",
+      "/images/products/machines/chocodew-2-options-vending-machine-left.jpg"
     ],
     shortDescription: "Compact, sleek vending machine offering two perfect beverage options.",
     description: "This machine combines elegance with simplicity, delivering two flawless beverage choices at the touch of a button. Designed for smaller offices and intimate settings, its intuitive design ensures quality and ease, every cup.",
@@ -38,7 +39,8 @@ export const products: Product[] = [
     slug: "coffee-vending-machine-3-option",
     category: "machines",
     images: [
-      "https://placehold.co/600x600?text=Coffee+VM+3+Option"
+      "/images/products/machines/chocodew-3-options-vending-machine-right.jpg",
+      "/images/products/machines/chocodew-3-options-vending-machine-left.jpg"
     ],
     shortDescription: "Stylish three-option vending machine for versatile beverage experiences.",
     description: "Your versatile companion, offering three distinct beverage options tailored for diverse tastes. Ideal for medium-sized workplaces and reception areas, it promises consistent, premium quality with every pour.",
@@ -68,7 +70,8 @@ export const products: Product[] = [
     slug: "coffee-vending-machine-4-option",
     category: "machines",
     images: [
-      "/products/chocodew-4-options-vending-machine-right.jpg"
+      "/images/products/machines/chocodew-4-options-vending-machine-right.jpg",
+      "/images/products/machines/chocodew-4-options-vending-machine-left.jpg"
     ],
     shortDescription: "Versatile four-option beverage vending machine with intuitive controls.",
     description: "Elevate your coffee break, offering four carefully crafted beverage selections designed for bustling environments. Its seamless operation and contemporary aesthetics make it a favorite for offices, institutions, and exhibition venues.",
@@ -98,7 +101,8 @@ export const products: Product[] = [
     slug: "coffee-vending-machine-7-option",
     category: "machines",
     images: [
-      "https://placehold.co/600x600?text=Coffee+VM+7+Option"
+      "/images/products/machines/chocodew-7-options-vending-machine-right.jpg",
+      "/images/products/machines/chocodew-7-options-vending-machine-left.jpg"
     ],
     shortDescription: "Premium vending machine offering seven exceptional beverage options.",
     description: "Sets the gold standard for vending solutions, boasting seven customizable beverage options to satisfy every preference. Perfectly designed for large offices, hotels, and high-footfall environments, it promises reliability, sophistication, and superior taste.",
@@ -393,7 +397,7 @@ export const products: Product[] = [
     slug: "hot-and-cold-water-dispenser",
     category: "dispensers",
     images: [
-      "https://placehold.co/600x600?text=Water+Dispenser+Standard"
+      "/images/products/machines/hot-cold-and-normal-dispenser.jpg"
     ],
     shortDescription: "Stylish dispenser offering instant access to hot and cold water.",
     description: "Delivers instant, crystal-clear hot and cold water, ensuring convenience and freshness at home or in the office. Its sleek stainless-steel construction and reliable cooling system keep hydration effortless and enjoyable.",
@@ -423,7 +427,7 @@ export const products: Product[] = [
     slug: "hot-and-cold-water-dispenser-jumbo",
     category: "dispensers",
     images: [
-      "https://placehold.co/600x600?text=Water+Dispenser+Jumbo"
+      "/images/products/machines/JUMBO-DISPENSER-with-big-cooling-capacity.jpg"
     ],
     shortDescription: "High-capacity dispenser with superior cooling performance.",
     description: "Designed for demanding environments, offering extended cooling capacity and faster temperature regulation. Its durable build and efficient thermostat ensure consistently chilled and piping hot water, ideal for high-volume usage areas.",
@@ -453,7 +457,7 @@ export const products: Product[] = [
     slug: "hot-and-cold-water-dispenser-with-fridge",
     category: "dispensers",
     images: [
-      "https://placehold.co/600x600?text=Water+Dispenser+with+Fridge"
+      "/images/products/machines/Hot-cold-and-normal-dispenser-cooling-cabinet.jpg"
     ],
     shortDescription: "Multi-functional dispenser with integrated refrigeration compartment.",
     description: "Combines a premium hot and cold water dispenser with an integrated mini-fridge, perfect for keeping beverages and snacks fresh. Its innovative design makes it an ideal solution for offices, waiting rooms, and hospitality spaces.",

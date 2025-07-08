@@ -9,6 +9,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from 'lucide-react';
 import { ProductEnquiryModal } from "@/components/products/product-enquiry-modal";
+import { ImageLightbox } from "@/components/products/image-lightbox";
 import { ProductImageCarousel } from "@/components/products/product-image-carousel";
 
 interface ProductDetailsProps {
@@ -23,6 +24,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   };
 
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(`Hi, I'm interested in ${product.name}`);
@@ -39,7 +41,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         transition={{ duration: 0.5 }}
       >
         <div className="w-full max-w-md lg:max-w-lg mx-auto">
-          <ProductImageCarousel images={product.images} altText={product.name} options={{ loop: true }} />
+          <ProductImageCarousel
+            images={product.images}
+            altText={product.name}
+            options={{ loop: true }}
+            onMainImageClick={() => setLightboxOpen(true)}
+          />
         </div>
       </motion.div>
 
@@ -111,6 +118,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         product={product}
         open={showEnquiryModal}
         onOpenChange={setShowEnquiryModal}
+      />
+          <ImageLightbox
+        src={product.images[0]}
+        alt={product.name}
+        open={lightboxOpen}
+        onOpenChange={setLightboxOpen}
       />
     </div>
   );
