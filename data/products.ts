@@ -134,7 +134,7 @@ export const products: Product[] = [
     slug: "premium-instant-coffee",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Premium+Instant+Coffee"
+      "/images/products/premixes/premium-instant-coffee.jpg"
     ],
     shortDescription: "Bold, aromatic instant coffee blend for the perfect cup every time.",
     description: "Crafted for coffee lovers, our Premium Instant Coffee offers a robust and satisfying flavor instantly. Available in regular and low-sugar varieties, it delivers consistent excellence in every sip.",
@@ -163,7 +163,7 @@ export const products: Product[] = [
     slug: "masala-tea-premix",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Masala+Tea+Premix"
+      "/images/products/premixes/masala-tea-premix.jpg"
     ],
     shortDescription: "Traditional spiced tea with authentic Indian flavor in seconds.",
     description: "Enjoy the warmth of traditional Masala Tea instantly. A delightful blend of spices infused with premium tea, crafted to provide an authentic, comforting experience—also in a healthier low sugar option.",
@@ -192,7 +192,7 @@ export const products: Product[] = [
     slug: "dairy-whitener",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Dairy+Whitener"
+      "/images/products/premixes/dairy-whitener-premix.jpg"
     ],
     shortDescription: "Instant dairy whitener for a creamy, rich beverage experience.",
     description: "Elevate your beverage instantly with our Dairy Whitener. Expertly formulated for smoothness and creaminess, it blends seamlessly into your tea or coffee, enhancing every sip effortlessly.",
@@ -221,7 +221,7 @@ export const products: Product[] = [
     slug: "tomato-soup-premix",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Tomato+Soup+Premix"
+      "/images/products/premixes/tomato-soup-premix.jpg"
     ],
     shortDescription: "Rich and hearty instant tomato soup with real flavor.",
     description: "Our Tomato Soup Premix offers instant warmth and comfort, blending ripe tomatoes and gentle spices for a satisfying experience. Crafted for quick preparation without compromising authentic flavor.",
@@ -250,7 +250,7 @@ export const products: Product[] = [
     slug: "cappuccino-coffee-premix",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Cappuccino+Coffee+Premix"
+      "/images/products/premixes/cappuccino-coffee-premix.jpg"
     ],
     shortDescription: "Creamy and frothy instant cappuccino with authentic café taste.",
     description: "Savor café-style indulgence instantly with our Cappuccino Coffee Premix. Smooth, creamy, and frothy—crafted for an authentic cappuccino experience at home or office, with a healthier low sugar variant available.",
@@ -279,7 +279,7 @@ export const products: Product[] = [
     slug: "lemon-tea-premix",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Lemon+Tea+Premix"
+      "/images/products/premixes/lemon-tea-premix.jpg"
     ],
     shortDescription: "Invigorating instant lemon tea, fresh and crisp in every sip.",
     description: "Brighten your day instantly with our Lemon Tea Premix. Fresh, crisp, and perfectly balanced, it offers a refreshing and invigorating experience, perfect for any moment.",
@@ -308,7 +308,7 @@ export const products: Product[] = [
     slug: "cardamom-tea-premix",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Cardamom+Premix+Tea"
+      "/images/products/premixes/cardamom-tea-premix.jpg"
     ],
     shortDescription: "Delightfully aromatic instant cardamom tea blend.",
     description: "Indulge in the exotic fragrance of cardamom instantly. Our Cardamom Tea Premix blends premium tea leaves with aromatic cardamom, offering an authentic, soothing tea experience effortlessly.",
@@ -337,7 +337,7 @@ export const products: Product[] = [
     slug: "choco-milk-premix",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Choco+Milk+Premix"
+      "/images/products/premixes/choco-milk-premix.jpg"
     ],
     shortDescription: "Deliciously rich instant chocolate milk premix.",
     description: "Our Choco Milk Premix combines smooth chocolate and creamy milk for an instant indulgence. Enjoy rich, chocolatey goodness with every sip—perfect for kids and adults alike.",
@@ -366,7 +366,7 @@ export const products: Product[] = [
     slug: "chicory-coffee-premix",
     category: "premixes",
     images: [
-      "https://placehold.co/600x600?text=Chicory+Coffee+Premix"
+      "/images/products/premixes/chicory-coffee-premix.jpg"
     ],
     shortDescription: "Instant coffee premix enhanced with smooth, roasted chicory.",
     description: "Discover coffee perfection with our Chicory Coffee Premix. Expertly blended coffee and chicory offer a smooth, well-rounded taste, delivering delightful satisfaction instantly, every time.",
