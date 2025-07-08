@@ -43,7 +43,7 @@ export function ImageLightbox({ src, alt, open, onOpenChange }: ImageLightboxPro
         >
         <div
           ref={wrapperRef}
-          className="relative w-full max-w-[90vw] max-h-[90vh] flex flex-col items-center" style={{borderRadius:'0.5rem', overflow:'hidden'}}
+          className="relative w-[90vw] h-[80vh] sm:w-full sm:max-w-[90vw] sm:max-h-[90vh] flex flex-col items-center" style={{borderRadius:'0.5rem', overflow:'hidden'}}
           aria-label="Image lightbox"
         >
           {/* Close button */}
@@ -100,7 +100,7 @@ export function ImageLightbox({ src, alt, open, onOpenChange }: ImageLightboxPro
                   </button>
                 </div>
                 <TransformComponent>
-                  <div className="relative max-h-[90vh] max-w-[90vw] flex items-center justify-center overflow-hidden rounded-lg">
+                  <div className="relative h-full w-full flex items-center justify-center overflow-hidden rounded-lg">
                     {/* Lazy loaded high res image */}
                     <Image
                       src={src}

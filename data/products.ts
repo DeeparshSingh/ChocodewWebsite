@@ -305,7 +305,7 @@ export const products: Product[] = [
   {
     id: "pm-007",
     name: "Cardamom Tea Premix",
-    slug: "cardamom-premix-tea",
+    slug: "cardamom-tea-premix",
     category: "premixes",
     images: [
       "https://placehold.co/600x600?text=Cardamom+Premix+Tea"
