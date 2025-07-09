@@ -94,10 +94,10 @@ export function CalculatorResult({
             </ul>
           </div>
         </CardContent>
-        <CardFooter className="flex items-center justify-center gap-2">
+        <CardFooter className="flex flex-col sm:flex-row items-center justify-center gap-2 w-full">
           <Button
             onClick={handleWhatsAppClick}
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 w-full sm:w-auto"
             size="sm"
           >
             <MessageCircle className="h-4 w-4" />
@@ -105,7 +105,7 @@ export function CalculatorResult({
           </Button>
           <Button
             variant="outline"
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 w-full sm:w-auto"
             size="sm"
             asChild
           >
