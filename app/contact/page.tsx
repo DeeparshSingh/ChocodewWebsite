@@ -20,7 +20,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-8 md:mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 mt-8 md:mt-12">
           <ContactInfo />
           <ContactForm />
         </div>

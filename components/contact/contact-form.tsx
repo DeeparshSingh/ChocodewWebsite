@@ -77,15 +77,15 @@ export function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl h-full flex flex-col">
+      <Card className="max-w-sm mx-auto md:max-w-none border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl md:h-full flex flex-col">
         <CardHeader className="pb-4 sm:pb-6">
           <CardTitle className="text-xl sm:text-2xl md:text-3xl font-semibold">Send Us a Message</CardTitle>
           <CardDescription className="text-base text-muted-foreground">
             Fill out the form below and we&apos;ll get back to you as soon as possible.
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-4 sm:p-6 flex-1">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <CardContent className="p-3 sm:p-6 flex-1">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name" className="font-roboto text-base mb-1.5">Name</Label>
