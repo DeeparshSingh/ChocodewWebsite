@@ -46,15 +46,15 @@ export function CalculatorResult({
       className="w-full max-w-[22rem] sm:max-w-lg mx-auto"
     >
       <Card className="w-full border-accent/30 bg-gradient-to-br from-secondary/20 to-background">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Coffee className="h-6 w-6 text-primary" />
+        <CardHeader className="text-center space-y-2">
+          <CardTitle>
+            
             Your Premix Calculation Results
           </CardTitle>
           <CardDescription>Based on your consumption pattern</CardDescription>
         </CardHeader>
         <CardContent className="p-6 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-center">
             <div className="p-4 rounded-lg bg-background shadow-sm">
               <h4 className="text-sm font-medium text-muted-foreground mb-1">
                 Monthly Consumption

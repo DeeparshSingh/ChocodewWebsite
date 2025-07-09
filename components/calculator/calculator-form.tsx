@@ -133,9 +133,9 @@ export function CalculatorForm() {
   return (
     <div className="w-full max-w-[22rem] sm:max-w-lg mx-auto space-y-8">
       <Card className="w-full border">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-primary" />
+        <CardHeader className="text-center space-y-2">
+          <CardTitle>
+            
             Calculate Your Premix Requirements
           </CardTitle>
           <CardDescription>
@@ -144,7 +144,7 @@ export function CalculatorForm() {
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               {/* 1. Beverage Type */}
               <FormField
                 control={form.control}
