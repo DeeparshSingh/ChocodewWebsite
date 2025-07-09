@@ -45,7 +45,7 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.shortDescription}
           </CardDescription>
         </CardHeader>
-        <CardFooter className="p-3 md:p-4 pt-0">
+        <CardFooter className="p-3 md:p-4 pt-4 md:pt-0">
           <div className="flex justify-between w-full gap-2">
             <Button asChild variant="outline" size="sm" className="flex-1">
               <Link href={`/products/${product.slug}`}>Details</Link>

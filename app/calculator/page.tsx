@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function CalculatorPage() {
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-neutral-50/50 to-white">
+    <div className="w-full min-h-screen bg-gradient-to-b from-neutral-50/50 to-white pt-24 sm:pt-0">
       <HeroSection 
         title="Calculate Your Premix Needs"
         description="Estimate your monthly premix needs in just 30 seconds! Our calculator helps you determine exactly how much premix you'll need based on your consumption."
