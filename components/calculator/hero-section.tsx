@@ -88,9 +88,12 @@ export function HeroSection({
                     className="flex flex-col items-center group focus:outline-none"
                     onClick={(e) => {
                       e.preventDefault();
-                      document.querySelector(action.href)?.scrollIntoView({
-                        behavior: 'smooth'
-                      });
+                      const target = document.querySelector(action.href);
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        // Offset back up slightly to account for header / spacing overshoot
+                        window.scrollBy({ top: 500, behavior: 'smooth' }); // tweak value as needed
+                      }
                     }}
                   >
                     <div

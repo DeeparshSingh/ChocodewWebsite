@@ -94,6 +94,11 @@ export function CalculatorForm() {
         behavior: "smooth",
         block: "nearest",
       });
+      // Fine-tune scroll on narrow screens (mobile)
+      if (window.innerWidth < 640) {
+        // Negative value moves view slightly back up; tweak as needed
+        window.scrollBy({ top: 550, behavior: 'smooth' });
+      }
     }
   }, [result]);
 
