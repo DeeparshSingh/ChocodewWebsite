@@ -53,7 +53,7 @@ export function CalculatorResult({
           </CardTitle>
           <CardDescription className="text-muted-foreground text-sm mb-1">Based on your consumption pattern</CardDescription>
         </CardHeader>
-        <CardContent className="px-6 pb-6 pt-4 space-y-5">
+        <CardContent className="px-6 pb-6 pt-2 space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-center">
             <div className="p-4 rounded-lg bg-background shadow-sm">
               <h4 className="text-sm font-medium text-muted-foreground mb-1">
