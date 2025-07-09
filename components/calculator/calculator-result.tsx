@@ -43,7 +43,7 @@ export function CalculatorResult({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className="w-full"
+      className="w-full max-w-[22rem] sm:max-w-lg mx-auto"
     >
       <Card className="w-full border-accent/30 bg-gradient-to-br from-secondary/20 to-background">
         <CardHeader>
