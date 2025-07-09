@@ -100,7 +100,10 @@ export function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className={cn("md:hidden hover:bg-primary/10", activeScrolled ? "text-foreground" : "text-white")}
+          className={cn(
+          "md:hidden hover:bg-primary/10",
+          activeScrolled ? "text-foreground" : (pathname === '/' ? 'text-white' : 'text-primary')
+        )}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >

@@ -17,9 +17,9 @@ export function ContactInfo() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
     >
-      <Card className="border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl">
-        <CardHeader className="pb-6">
-          <CardTitle className="text-2xl md:text-3xl font-semibold">Contact Information</CardTitle>
+      <Card className="border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl h-full">
+        <CardHeader className="pb-4 sm:pb-6">
+          <CardTitle className="text-xl sm:text-2xl md:text-3xl font-semibold">Contact Information</CardTitle>
           <CardDescription className="text-base text-muted-foreground">
             Get in touch with us through any of these channels
           </CardDescription>
