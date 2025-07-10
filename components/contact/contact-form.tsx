@@ -78,13 +78,13 @@ export function ContactForm() {
       transition={{ duration: 0.5 }}
     >
       <Card className="max-w-sm mx-auto md:max-w-none border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl md:h-full flex flex-col">
-        <CardHeader className="pb-4 sm:pb-6">
+        <CardHeader className="px-5 pb-4 sm:px-6 sm:pb-6">
           <CardTitle className="text-xl sm:text-2xl md:text-3xl font-semibold">Send Us a Message</CardTitle>
           <CardDescription className="text-base text-muted-foreground">
             Fill out the form below and we&apos;ll get back to you as soon as possible.
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-3 sm:p-6 flex-1">
+        <CardContent className="p-5 sm:p-6 flex-1">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">

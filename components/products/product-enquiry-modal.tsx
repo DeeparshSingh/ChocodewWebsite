@@ -72,7 +72,7 @@ export function ProductEnquiryModal({ product, open, onOpenChange }: ProductEnqu
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="w-full max-w-xs sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>Enquire About {product.name}</DialogTitle>
           <DialogDescription>
