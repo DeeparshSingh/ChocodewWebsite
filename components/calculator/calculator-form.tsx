@@ -136,7 +136,7 @@ export function CalculatorForm() {
   };
 
   return (
-    <div className="w-full max-w-[18rem] sm:max-w-lg mx-auto space-y-8">
+    <div className="w-full max-w-[22rem] sm:max-w-lg mx-auto space-y-8">
       <Card className="w-full border">
         <CardHeader className="text-center space-y-2">
           <CardTitle>

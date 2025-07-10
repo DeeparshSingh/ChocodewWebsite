@@ -5,82 +5,112 @@ import { milestones } from "@/data/milestones";
 import { useRef } from "react";
 
 export function Timeline() {
-  const timelineRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ["start end", "end end"]
+    target: ref,
+    offset: ["start end", "end end"],
   });
 
-  const scaleY = useSpring(scrollYProgress, {
+  const lineScale = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   return (
-    <div className="relative max-w-4xl mx-auto px-4 sm:px-6" ref={timelineRef}>
-      <motion.div 
-        style={{ scaleY }}
-        className="absolute left-4 sm:left-8 top-0 w-[2px] h-full origin-top bg-gradient-to-b from-primary via-primary to-primary/50"
+    <section
+      ref={ref}
+      className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8"
+    >
+      {/* Central timeline accent for desktop */}
+      <motion.span
+        style={{ scaleY: lineScale }}
+        className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-px h-full origin-top bg-gradient-to-b from-primary via-primary/70 to-primary/20"
       />
 
-      <div className="space-y-12 sm:space-y-16 relative">
-        {milestones.map((milestone, index) => (
-          <motion.div
-            key={milestone.year}
-            className="relative pl-10 sm:pl-16"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <motion.div
-              className="absolute left-[11px] sm:left-[25px] top-4 z-10"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.4 }}
+      <ul className="space-y-12 relative">
+        {milestones.map((m, idx) => {
+          const alignRight = idx % 2 !== 0;
+          return (
+            <li
+              key={m.year}
+              className="relative md:grid md:grid-cols-2 md:gap-8 items-start"
             >
-              <div className="w-4 h-4 rounded-full bg-primary border-3 border-background shadow-md relative">
-                <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping" />
-              </div>
-            </motion.div>
+              {/* Left column (card when alignLeft) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="md:col-span-1"
+              >
+                {!alignRight && <TimelineCard milestone={m} align="left" />}
+              </motion.div>
 
-            <motion.div
-              className="absolute left-[14px] sm:left-[28px] top-6 w-6 sm:w-8 h-[2px] bg-primary/50"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.4 }}
-            />
-
-            <motion.div
-              className="bg-card backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-border/50 shadow-md hover:shadow-lg transition-shadow duration-300"
-              whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
-            >
-              <div className="inline-flex items-center justify-center mb-2">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-full blur-[2px] opacity-50" />
-                  <div className="relative bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-4 py-1 rounded-full text-xs font-medium shadow-sm backdrop-blur-sm">
-                    {milestone.year}
-                  </div>
-                </div>
+              {/* Center dot (absolute) */}
+              <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                <span className="md:hidden absolute left-4 top-0 h-full w-px bg-border" />
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="relative flex items-center justify-center w-6 h-6"
+                >
+                  <div className="w-3.5 h-3.5 rounded-full bg-primary shadow-md" />
+                  <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping" />
+                </motion.div>
               </div>
 
-              <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2">
-                {milestone.title}
-              </h3>
-              
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                {milestone.description}
-              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="md:col-span-1"
+              >
+                {alignRight && <TimelineCard milestone={m} align="right" />}
+              </motion.div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}
 
-              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/5 to-transparent rounded-tr-xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-12 h-12 bg-gradient-to-tr from-primary/5 to-transparent rounded-bl-xl pointer-events-none" />
-            </motion.div>
-          </motion.div>
-        ))}
+interface TimelineCardProps {
+  milestone: {
+    year: number;
+    title: string;
+    description: string;
+  };
+  align: "left" | "right";
+}
+
+function TimelineCard({ milestone, align }: TimelineCardProps) {
+  return (
+    <div
+      className={`relative bg-card rounded-xl border border-border/50 shadow-md hover:shadow-lg transition-shadow duration-300 p-5 sm:p-6 ${
+        align === "right" ? "md:ml-4" : "md:mr-4"
+      }`}
+    >
+      {/* Year badge */}
+      <div className="inline-flex items-center mb-3">
+        <span className="relative text-xs font-semibold px-4 py-1 rounded-full text-primary-foreground bg-gradient-to-r from-primary to-primary/80 shadow-sm">
+          {milestone.year}
+        </span>
       </div>
+
+      <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2">
+        {milestone.title}
+      </h3>
+      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+        {milestone.description}
+      </p>
+
+      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/5 to-transparent rounded-tr-xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-12 h-12 bg-gradient-to-tr from-primary/5 to-transparent rounded-bl-xl pointer-events-none" />
     </div>
   );
 }
