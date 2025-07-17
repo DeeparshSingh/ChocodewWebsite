@@ -22,6 +22,8 @@ export interface HeroProps extends React.HTMLAttributes<HTMLElement> {
   titleClassName?: string;
   subtitleClassName?: string;
   actionsClassName?: string;
+  topPaddingClass?: string; // tailwind padding class for space between header and hero
+  innerGapClass?: string; // tailwind gap/space-y between bar and text
 }
 
 const Hero = React.forwardRef<HTMLElement, HeroProps>(
@@ -31,6 +33,8 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
       gradient = true,
       barColor = "#d0a372", // default brand accent
       blur = true,
+      topPaddingClass = "pt-0",
+      innerGapClass = "gap-4",
       title,
       subtitle,
       actions,
@@ -46,6 +50,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
         ref={ref}
         className={cn(
           "relative z-0 flex min-h-[80vh] w-full flex-col items-center justify-center overflow-hidden rounded-md bg-[#FAFAFA]",
+          topPaddingClass,
           className,
         )}
         {...props}
@@ -121,7 +126,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
           viewport={{ once: true }}
           transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
           whileInView={{ y: 0, opacity: 1 }}
-          className="relative z-50 container flex justify-center flex-1 flex-col px-5 md:px-10 gap-4"
+          className={cn(`relative z-50 w-full flex justify-center flex-1 flex-col px-5 md:px-10 ${innerGapClass}`)}
         >
           <div className="flex flex-col items-center text-center space-y-4">
             <h1
