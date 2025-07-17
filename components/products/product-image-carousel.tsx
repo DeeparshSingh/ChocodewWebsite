@@ -14,13 +14,15 @@ interface ProductImageCarouselProps {
   altText: string;
   options?: CarouselOptions;
   onMainImageClick?: () => void;
+  selectedIndex: number;
+  onSelectImage: (index: number) => void;
 }
 
-export function ProductImageCarousel({ images, altText, options, onMainImageClick }: ProductImageCarouselProps) {
+export function ProductImageCarousel({ images, altText, options, onMainImageClick, selectedIndex, onSelectImage }: ProductImageCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
@@ -28,10 +30,10 @@ export function ProductImageCarousel({ images, altText, options, onMainImageClic
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
+    onSelectImage(emblaApi.selectedScrollSnap());
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, [emblaApi, setSelectedIndex]);
+  }, [emblaApi, onSelectImage]);
 
   useEffect(() => {
     if (!emblaApi) return;

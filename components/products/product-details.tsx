@@ -25,6 +25,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(`Hi, I'm interested in ${product.name}`);
@@ -46,6 +47,8 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             altText={product.name}
             options={{ loop: true }}
             onMainImageClick={() => setLightboxOpen(true)}
+            selectedIndex={selectedImageIndex}
+            onSelectImage={setSelectedImageIndex}
           />
         </div>
       </motion.div>
@@ -120,7 +123,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         onOpenChange={setShowEnquiryModal}
       />
           <ImageLightbox
-        src={product.images[0]}
+        src={product.images[selectedImageIndex]}
         alt={product.name}
         open={lightboxOpen}
         onOpenChange={setLightboxOpen}
