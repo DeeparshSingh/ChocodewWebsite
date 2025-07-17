@@ -77,7 +77,7 @@ export function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="max-w-sm mx-auto md:max-w-none border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl md:h-full flex flex-col">
+      <Card className="max-w-xs mx-auto md:max-w-none border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl md:h-full flex flex-col">
         <CardHeader className="px-5 pb-4 sm:px-6 sm:pb-6">
           <CardTitle className="text-xl sm:text-2xl md:text-3xl font-semibold">Send Us a Message</CardTitle>
           <CardDescription className="text-base text-muted-foreground">

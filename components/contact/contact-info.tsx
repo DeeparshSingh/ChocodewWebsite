@@ -17,7 +17,7 @@ export function ContactInfo() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
     >
-      <Card className="max-w-sm mx-auto md:max-w-none border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl md:h-full">
+      <Card className="max-w-xs mx-auto md:max-w-none border-0 bg-white/90 backdrop-blur-md shadow-lg hover:shadow-xl md:h-full">
         <CardHeader className="pb-4 sm:pb-6">
           <CardTitle className="text-xl sm:text-2xl md:text-3xl font-semibold">Contact Information</CardTitle>
           <CardDescription className="text-base text-muted-foreground">
