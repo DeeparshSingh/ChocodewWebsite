@@ -27,6 +27,11 @@ export function Timeline() {
         style={{ scaleY: lineScale }}
         className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-px h-full origin-top bg-gradient-to-b from-primary via-primary/70 to-primary/20"
       />
+      {/* Mobile vertical accent */}
+      <motion.span
+        style={{ scaleY: lineScale }}
+        className="md:hidden absolute left-4 top-0 w-px h-full origin-top bg-gradient-to-b from-primary via-primary/70 to-primary/20"
+      />
 
       <ul className="space-y-12 relative">
         {milestones.map((m, idx) => {
@@ -34,7 +39,7 @@ export function Timeline() {
           return (
             <li
               key={m.year}
-              className="relative md:grid md:grid-cols-2 md:gap-8 items-start"
+              className="relative pl-10 md:pl-0 md:grid md:grid-cols-2 md:gap-8 items-start"
             >
               {/* Left column (card when alignLeft) */}
               <motion.div
@@ -44,8 +49,23 @@ export function Timeline() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="md:col-span-1"
               >
+                {/* Mobile stacked card (left) */}
                 {!alignRight && <TimelineCard milestone={m} align="left" />}
               </motion.div>
+
+              {/* Mobile dot */}
+              <div className="md:hidden absolute left-4 top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="relative flex items-center justify-center w-3.5 h-3.5"
+                >
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary shadow-md" />
+                  <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping" />
+                </motion.div>
+              </div>
 
               {/* Center dot (absolute) */}
               <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
