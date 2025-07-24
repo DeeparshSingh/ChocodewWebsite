@@ -140,7 +140,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             {subtitle && (
               <p
                 className={cn(
-                  "text-xl text-muted-foreground",
+                  "text-base md:text-xl text-muted-foreground",
                   subtitleClassName,
                 )}
               >
