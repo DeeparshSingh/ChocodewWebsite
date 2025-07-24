@@ -12,15 +12,19 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="w-full min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 pt-20 md:pt-20 pb-12 md:pb-16">
-        <Hero
-          title="Brewed with Passion. Built on Trust."
-          subtitle="Since 2007, Chocodew has been a pioneer in beverage vending solutions, committed to quality, innovation, and exceptional customer service."
-          titleClassName="font-playfair text-[#49362c]"
-          subtitleClassName="max-w-3xl"
-        />
+      <Hero
+        className="rounded-none sm:rounded-md mt-24" topPaddingClass="pt-20 md:pt-24"
+        title="Brewed with Passion. Built on Trust."
+        subtitle="Since 2007, Chocodew has been a pioneer in beverage vending solutions, committed to quality, innovation, and exceptional customer service."
+        titleClassName="font-playfair text-[#49362c]"
+        subtitleClassName="max-w-3xl"
+        innerGapClass="gap-1 md:gap-2"
+      />
 
-        <div className="mt-0 md:mt-12 space-y-16 md:space-y-24">
+      <div className="max-w-7xl mx-auto px-4 pt-12 md:pt-16 pb-12 md:pb-16">
+
+
+        <div className="mt-0 md:mt-8 space-y-16 md:space-y-24">
           <section className="bg-neutral-50/50 py-8 md:py-12 -mx-4 px-4">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-xl md:text-3xl font-bold">Our Journey</h2>
