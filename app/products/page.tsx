@@ -19,12 +19,15 @@ export default function ProductsPage() {
           className="max-w-7xl mx-auto px-4 pt-32 pb-12 md:pt-40 md:pb-16 relative z-10"
         >
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-primary">
-              Our Premium Products
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.24em] text-accent md:text-sm">
+              Our Range
+            </p>
+            <h1 className="font-playfair text-4xl font-bold leading-[1.05] text-primary md:text-6xl lg:text-7xl">
+              Everything <span className="italic text-accent">we pour</span>.
             </h1>
-            <p className="text-sm md:text-lg text-muted-foreground max-w-3xl mx-auto">
-              Chocodew offers a comprehensive range of high-quality vending machines and premium 
-              beverage mixes that deliver exceptional taste and reliability.
+            <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground md:mt-6 md:text-lg">
+              Vending machines, drink premixes and water dispensers — built for
+              exceptional taste and effortless reliability, cup after cup.
             </p>
           </div>
         </motion.div>

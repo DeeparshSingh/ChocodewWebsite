@@ -1,89 +1,103 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SplitText } from "@/components/ui/split-text";
 import { motion } from "framer-motion";
 import { Coffee, Award, Truck, HeartHandshake } from "lucide-react";
 
 const valueProps = [
   {
-    icon: <Coffee className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
+    icon: Coffee,
     title: "Exceptional Quality",
-    description: "Every ingredient vetted, every cup consistent."
+    description: "Every ingredient vetted, every cup consistent.",
   },
   {
-    icon: <Award className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
+    icon: Award,
     title: "ISO 9001:2015 Certified",
-    description: "Globally recognised standards. Locally perfected."
+    description: "Globally recognised standards. Locally perfected.",
   },
   {
-    icon: <Truck className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
+    icon: Truck,
     title: "Uninterrupted Performance",
-    description: "Installation, maintenance, supplies—handled, hassle-free."
+    description: "Installation, maintenance, supplies — handled, hassle-free.",
   },
   {
-    icon: <HeartHandshake className="h-6 w-6 md:h-8 md:w-8 text-primary" />,
+    icon: HeartHandshake,
     title: "Seamless Experience",
-    description: "Effortless setup. Smooth operation. Pure satisfaction."
-  }
+    description: "Effortless setup. Smooth operation. Pure satisfaction.",
+  },
 ];
 
+const EASE = [0.16, 1, 0.3, 1] as const;
+
 export function ValueProps() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
-    <section className="w-full py-8 md:py-20 bg-neutral-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-6 md:mb-12">
-          <SplitText text="Why Choose Chocodew?" className="text-2xl md:text-3xl lg:text-4xl font-bold font-playfair mb-6 md:mb-12"/>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4 pt-4">
-            Our commitment to excellence and customer satisfaction sets us apart in the beverage vending industry.
-          </p>
+    <section className="w-full bg-neutral-50 py-16 md:py-28">
+      <div className="container mx-auto max-w-7xl px-4">
+        {/* Editorial header: statement left, context right */}
+        <div className="grid gap-6 md:grid-cols-12 md:items-end">
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: EASE }}
+            className="col-span-full font-playfair text-3xl font-bold leading-[1.05] text-primary md:col-span-7 md:text-5xl lg:text-6xl"
+          >
+            Why teams stay
+            <br className="hidden sm:block" /> with{" "}
+            <span className="italic text-accent">Chocodew</span>.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
+            className="col-span-full max-w-sm text-sm leading-relaxed text-muted-foreground md:col-span-4 md:col-start-9 md:text-base"
+          >
+            A partner obsessed with the details that make the difference —
+            from the first install to the ten-thousandth cup.
+          </motion.p>
         </div>
-        
-        <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 lg:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {valueProps.map((prop, index) => (
-            <motion.div key={index} variants={cardVariants}>
-              <Card className="card-hover h-full border-none shadow-md">
-                <CardHeader className="pb-0 flex flex-col items-center text-center space-y-1 md:space-y-1 p-3 md:p-5">
-                  <div className="p-2 md:p-3 rounded-full bg-primary/10">
-                    {prop.icon}
-                  </div>
-                  <CardTitle className="text-base md:text-lg">{prop.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center px-3 pt-0 pb-4">
-                  <p className="text-xs md:text-sm text-muted-foreground">{prop.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+
+        {/* Four props — hairline-separated, no cards, no shadows */}
+        <div className="mt-14 grid grid-cols-2 border-t border-primary/10 md:mt-20 md:grid-cols-4">
+          {valueProps.map((prop, index) => {
+            const Icon = prop.icon;
+            return (
+              <motion.div
+                key={prop.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
+                className={[
+                  "group relative border-b border-primary/10 px-1 py-8 md:py-12",
+                  // vertical hairlines between columns
+                  "md:border-r md:border-primary/10 md:px-7",
+                  index % 2 === 0 ? "border-r border-primary/10 pr-5" : "pl-5 md:pl-7",
+                  index === 3 ? "md:border-r-0" : "",
+                ].join(" ")}
+              >
+                <span className="font-playfair text-5xl leading-none text-primary/10 transition-colors duration-500 group-hover:text-accent/50 md:text-6xl">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <Icon
+                  className="mt-6 h-6 w-6 text-accent transition-transform duration-500 group-hover:-translate-y-1 md:h-7 md:w-7"
+                  strokeWidth={1.5}
+                />
+
+                <h3 className="mt-4 font-playfair text-base font-semibold leading-snug text-primary md:text-xl">
+                  {prop.title}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground md:text-sm">
+                  {prop.description}
+                </p>
+
+                {/* caramel underline sweep */}
+                <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100" />
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
