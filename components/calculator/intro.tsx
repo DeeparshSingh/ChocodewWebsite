@@ -23,7 +23,7 @@ export function CalculatorIntro() {
         transition={{ duration: 0.8, delay: 0.08, ease: EASE }}
         className="mt-5 max-w-3xl font-playfair text-4xl font-bold leading-[1.05] text-primary md:text-6xl lg:text-7xl"
       >
-        Cups in. <span className="italic text-accent">Kilos out.</span>
+        Cups in, <span className="italic text-accent">kilos out</span>
       </motion.h1>
 
       <motion.p
@@ -32,8 +32,8 @@ export function CalculatorIntro() {
         transition={{ duration: 0.8, delay: 0.16, ease: EASE }}
         className="mt-6 max-w-xl text-sm text-muted-foreground md:text-lg"
       >
-        Tell us what your workplace drinks and how often — get your monthly
-        premix requirement instantly, no guesswork.
+        Tell us what your workplace drinks and how often, and get your
+        monthly premix requirement instantly. No guesswork.
       </motion.p>
 
       <motion.a

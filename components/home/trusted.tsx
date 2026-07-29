@@ -62,13 +62,13 @@ export function Trusted() {
               return (
                 <CarouselItem
                   key={i}
-                  className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/6"
+                  className="flex basis-[31%] justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
                 >
-                  <div className="mx-4 flex shrink-0 flex-col items-center gap-3 md:mx-8">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/10 bg-card text-accent shadow-sm md:h-16 md:w-16">
-                      <Icon className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.5} />
+                  <div className="mx-2 flex shrink-0 flex-col items-center gap-2.5 md:mx-8 md:gap-3">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/10 bg-card text-accent shadow-sm md:h-16 md:w-16">
+                      <Icon className="h-5 w-5 md:h-7 md:w-7" strokeWidth={1.5} />
                     </span>
-                    <span className="whitespace-nowrap text-xs font-medium text-muted-foreground md:text-sm">
+                    <span className="whitespace-nowrap text-[11px] font-medium text-muted-foreground md:text-sm">
                       {sector.label}
                     </span>
                   </div>

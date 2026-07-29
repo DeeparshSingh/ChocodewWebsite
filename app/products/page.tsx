@@ -23,10 +23,10 @@ export default function ProductsPage() {
               Our Range
             </p>
             <h1 className="font-playfair text-4xl font-bold leading-[1.05] text-primary md:text-6xl lg:text-7xl">
-              Everything <span className="italic text-accent">we pour</span>.
+              Everything <span className="italic text-accent">we pour</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground md:mt-6 md:text-lg">
-              Vending machines, drink premixes and water dispensers — built for
+              Vending machines, drink premixes and water dispensers, built for
               exceptional taste and effortless reliability, cup after cup.
             </p>
           </div>

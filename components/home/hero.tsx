@@ -53,8 +53,8 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[100svh] w-full flex-col justify-end overflow-hidden bg-[#211712]"
-      aria-label="Chocodew — premium beverage vending"
+      className="cd-grain relative flex min-h-[100svh] w-full flex-col justify-end overflow-hidden bg-[#211712]"
+      aria-label="Chocodew premium beverage vending"
     >
       {/* 3D bean field + warm vignette */}
       <div data-hero-scene className="absolute inset-0">
@@ -72,8 +72,20 @@ export function Hero() {
 
       <div
         data-hero-content
-        className="container mx-auto max-w-7xl px-4 pb-[clamp(5rem,16vh,9rem)] pt-36 relative z-10"
+        className="container mx-auto max-w-7xl px-4 pb-[clamp(3rem,8vh,5rem)] pt-32 relative z-10"
       >
+        <motion.div
+          className="mb-7 flex items-center gap-4"
+          initial={{ opacity: 0, x: -14 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: EASE, delay: 0.05 }}
+        >
+          <span aria-hidden="true" className="h-px w-12 bg-[#d99e5e]" />
+          <span className="text-[0.72rem] font-medium tracking-[0.3em] text-[#c4b09a]">
+            BEVERAGE VENDING, PERFECTED
+          </span>
+        </motion.div>
+
         <h1 className="font-playfair font-bold leading-[0.98] tracking-tight text-[clamp(3.4rem,2rem+9vw,9rem)]">
           {WORDS.map((w, i) => (
             <span
@@ -94,48 +106,62 @@ export function Hero() {
           ))}
         </h1>
 
-        <div className="mt-8 flex flex-col justify-between gap-9 md:flex-row md:items-end">
-          <motion.div
-            className="max-w-xl"
-            initial={{ opacity: 0, y: 26 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: EASE, delay: 0.55 }}
-          >
-            <p className="text-[#c4b09a] text-lg md:text-xl leading-relaxed">
-              Vending machines and premixes engineered for delight — coffee,
-              chai and more, brewed identically perfect, cup after cup.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="/products"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#d99e5e] px-8 py-3.5 text-[0.95rem] font-medium text-[#211712] transition-colors duration-300 hover:bg-[#e6b578]"
-              >
-                Explore Products
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.75} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full border border-[#f1e8da]/30 px-8 py-3.5 text-[0.95rem] font-medium text-[#f1e8da] transition-colors duration-300 hover:border-[#f1e8da]/70"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </motion.div>
+        <motion.div
+          className="mt-8 max-w-xl"
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: EASE, delay: 0.55 }}
+        >
+          <p className="text-[#c4b09a] text-lg md:text-xl leading-relaxed">
+            Vending machines and premixes engineered for delight. Coffee,
+            chai and more, brewed identically perfect, cup after cup.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              href="/products"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#d99e5e] px-8 py-3.5 text-[0.95rem] font-medium text-[#211712] transition-colors duration-300 hover:bg-[#e6b578]"
+            >
+              Explore Products
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.75} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-full border border-[#f1e8da]/30 px-8 py-3.5 text-[0.95rem] font-medium text-[#f1e8da] transition-colors duration-300 hover:border-[#f1e8da]/70"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </motion.div>
 
-          <motion.div
-            className="flex shrink-0 items-center gap-8 md:flex-col md:items-end md:gap-3"
-            initial={{ opacity: 0, y: 26 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: EASE, delay: 0.75 }}
-          >
-            <p className="text-[0.8rem] tracking-[0.14em] text-[#c4b09a]">
-              SINCE 2007 · LUDHIANA
-            </p>
-            <p className="text-[0.8rem] tracking-[0.14em] text-[#c4b09a]">
-              ISO 9001:2015 CERTIFIED
-            </p>
-          </motion.div>
-        </div>
+        {/* Bottom stat strip */}
+        <motion.dl
+          className="mt-12 grid grid-cols-3 gap-4 border-t border-[#f1e8da]/15 pt-6 md:mt-14 md:gap-8 md:pt-7"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: EASE, delay: 0.8 }}
+        >
+          {[
+            { value: "2007", label: "BREWING SINCE" },
+            { value: "2,000+", label: "INSTALLATIONS" },
+            { value: "ISO 9001", valueLg: "ISO 9001:2015", label: "CERTIFIED QUALITY" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <dd className="font-playfair text-lg font-bold text-[#f1e8da] sm:text-xl md:text-3xl">
+                {stat.valueLg ? (
+                  <>
+                    <span className="md:hidden">{stat.value}</span>
+                    <span className="hidden md:inline">{stat.valueLg}</span>
+                  </>
+                ) : (
+                  stat.value
+                )}
+              </dd>
+              <dt className="mt-1 text-[0.6rem] tracking-[0.22em] text-[#c4b09a]/80 md:text-[0.72rem]">
+                {stat.label}
+              </dt>
+            </div>
+          ))}
+        </motion.dl>
       </div>
 
       {/* scroll cue */}

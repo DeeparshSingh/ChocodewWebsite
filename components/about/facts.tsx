@@ -39,7 +39,7 @@ export function Facts() {
           By the numbers
         </p>
         <h2 className="mt-4 font-playfair text-3xl font-bold leading-[1.05] text-primary md:text-5xl">
-          Small operation. <span className="italic text-accent">Long reach.</span>
+          Small operation, <span className="italic text-accent">long reach</span>
         </h2>
       </motion.div>
 
@@ -51,9 +51,9 @@ export function Facts() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: (i % 3) * 0.08, ease: EASE }}
-            className="group flex flex-col gap-2 border-b border-r border-primary/10 p-5 transition-colors duration-500 hover:bg-neutral-50 md:p-8"
+            className="group flex flex-col gap-2 border-b border-r border-primary/10 p-4 transition-colors duration-500 hover:bg-neutral-50 sm:p-5 md:p-8"
           >
-            <span className="font-playfair text-[clamp(2.4rem,5vw,3.75rem)] font-bold leading-none text-primary">
+            <span className="break-words font-playfair text-[clamp(1.7rem,6.5vw,3.75rem)] font-bold leading-[1.05] text-primary">
               {typeof fact.value === "number" ? (
                 <CountUp to={fact.value} prefix={fact.prefix} suffix={fact.suffix} />
               ) : (

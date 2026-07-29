@@ -17,7 +17,7 @@ const valueProps = [
   {
     icon: Truck,
     title: "Uninterrupted Performance",
-    description: "Installation, maintenance, supplies — handled, hassle-free.",
+    description: "Installation, maintenance, supplies. Handled, hassle-free.",
   },
   {
     icon: HeartHandshake,
@@ -43,7 +43,7 @@ export function ValueProps() {
           >
             Why teams stay
             <br className="hidden sm:block" /> with{" "}
-            <span className="italic text-accent">Chocodew</span>.
+            <span className="italic text-accent">Chocodew</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -52,8 +52,8 @@ export function ValueProps() {
             transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
             className="col-span-full max-w-sm text-sm leading-relaxed text-muted-foreground md:col-span-4 md:col-start-9 md:text-base"
           >
-            A partner obsessed with the details that make the difference —
-            from the first install to the ten-thousandth cup.
+            A partner obsessed with the details that make the difference, from
+            the first install to the ten-thousandth cup.
           </motion.p>
         </div>
 
@@ -76,7 +76,7 @@ export function ValueProps() {
                   index === 3 ? "md:border-r-0" : "",
                 ].join(" ")}
               >
-                <span className="font-playfair text-5xl leading-none text-primary/10 transition-colors duration-500 group-hover:text-accent/50 md:text-6xl">
+                <span className="font-playfair text-5xl leading-none text-accent/70 transition-colors duration-500 group-hover:text-accent md:text-6xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 

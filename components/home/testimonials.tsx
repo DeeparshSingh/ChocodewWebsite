@@ -34,7 +34,7 @@ export function Testimonials() {
             Testimonials
           </div>
           <h2 className="mt-5 font-playfair text-3xl font-bold leading-[1.05] text-primary md:text-5xl">
-            Poured, sipped, <span className="italic text-accent">approved</span>.
+            Poured, sipped, <span className="italic text-accent">approved</span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
             Offices, hotels, hospitals and campuses across India on what it&rsquo;s

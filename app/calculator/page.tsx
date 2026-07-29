@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Instrument } from "@/components/calculator/instrument";
+import { CalculatorCard } from "@/components/calculator/calculator-card";
 import { CalculatorIntro } from "@/components/calculator/intro";
 
 export const metadata: Metadata = {
@@ -19,11 +19,11 @@ export default function CalculatorPage() {
         aria-label="Premix calculator"
       >
         <div className="container mx-auto max-w-6xl px-4">
-          <Instrument />
+          <CalculatorCard />
 
           <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-muted-foreground">
             Estimates use our standard dosing. A 20% buffer keeps machines from
-            running dry between refills — call{" "}
+            running dry between refills. Call{" "}
             <a
               href="tel:+919876333111"
               className="font-medium text-primary underline-offset-4 hover:underline"

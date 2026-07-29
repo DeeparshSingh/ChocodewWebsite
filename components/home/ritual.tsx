@@ -8,7 +8,7 @@ const STEPS = [
   {
     n: "01",
     title: "Choose",
-    body: "Cappuccino, cutting chai, cardamom, soup — pick from up to seven beverages on a one-touch panel. No barista, no queue, no guesswork.",
+    body: "Cappuccino, cutting chai, cardamom, soup. Pick from up to seven beverages on a one-touch panel. No barista, no queue, no guesswork.",
   },
   {
     n: "02",
@@ -105,7 +105,7 @@ export function Ritual() {
             transition={{ duration: 0.8, ease: EASE }}
             className="font-playfair text-3xl font-bold leading-[1.05] text-primary md:text-5xl"
           >
-            One cup, three moves.
+            One cup, three moves
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -114,15 +114,15 @@ export function Ritual() {
             transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
             className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base"
           >
-            Twenty-five seconds from button to beverage — engineered so the
+            Twenty-five seconds from button to beverage, engineered so the
             ritual never varies.
           </motion.p>
         </div>
 
-        <div className="grid gap-12 md:grid-cols-[1fr_1.15fr] md:gap-24">
-          {/* Sticky filling cup */}
-          <div className="md:sticky md:top-0 md:flex md:h-screen md:items-center">
-            <div className="mx-auto w-[min(64vw,260px)] md:w-[min(26vw,320px)]">
+        <div className="grid gap-4 md:grid-cols-[1fr_1.15fr] md:gap-24">
+          {/* Filling cup: sticky on every breakpoint so the pour stays visible */}
+          <div className="sticky top-[60px] z-20 -mx-4 bg-neutral-50/95 px-4 pb-2 pt-3 backdrop-blur-sm md:top-0 md:z-auto md:mx-0 md:flex md:h-screen md:items-center md:bg-transparent md:p-0 md:backdrop-blur-none">
+            <div className="mx-auto w-[min(38vw,170px)] md:w-[min(26vw,320px)]">
               <svg
                 viewBox="0 0 240 220"
                 className="w-full"
@@ -173,7 +173,7 @@ export function Ritual() {
                 <path d="M46 176 L194 176" stroke="hsl(var(--primary))" strokeWidth="3.5" strokeLinecap="round" />
                 <path d="M72 192 L168 192" stroke="hsl(var(--muted-foreground))" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
               </svg>
-              <p className="mt-6 text-center text-[0.72rem] tracking-[0.16em] text-muted-foreground">
+              <p className="mt-2 text-center text-[0.6rem] tracking-[0.16em] text-muted-foreground md:mt-6 md:text-[0.72rem]">
                 PRECISION POUR · FILTERED WATER
               </p>
             </div>

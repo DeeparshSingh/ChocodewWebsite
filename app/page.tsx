@@ -24,11 +24,11 @@ export default function Home() {
                 The Range
               </p>
               <h2 className="mt-4 font-playfair text-3xl font-bold leading-[1.05] text-primary md:text-5xl">
-                Crafted for <span className="italic text-accent">every cup</span>.
+                Crafted for <span className="italic text-accent">every cup</span>
               </h2>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-              Vending machines, drink premixes and water dispensers — built to
+              Vending machines, drink premixes and water dispensers, built to
               deliver exceptional taste and effortless reliability, day after day.
             </p>
           </div>

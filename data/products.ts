@@ -166,7 +166,7 @@ export const products: Product[] = [
       "/images/products/premixes/masala-tea-premix.jpeg"
     ],
     shortDescription: "Traditional spiced tea with authentic Indian flavor in seconds.",
-    description: "Enjoy the warmth of traditional Masala Tea instantly. A delightful blend of spices infused with premium tea, crafted to provide an authentic, comforting experience—also in a healthier low sugar option.",
+    description: "Enjoy the warmth of traditional Masala Tea instantly. A delightful blend of spices infused with premium tea, crafted to provide an authentic, comforting experience, also available in a healthier low sugar option.",
     featured: true,
     specs: [
       { name: "Weight", value: "1 kg pack" },
@@ -253,7 +253,7 @@ export const products: Product[] = [
       "/images/products/premixes/cappuccino-coffee-premix.jpeg"
     ],
     shortDescription: "Creamy and frothy instant cappuccino with authentic café taste.",
-    description: "Savor café-style indulgence instantly with our Cappuccino Coffee Premix. Smooth, creamy, and frothy—crafted for an authentic cappuccino experience at home or office, with a healthier low sugar variant available.",
+    description: "Savor café-style indulgence instantly with our Cappuccino Coffee Premix. Smooth, creamy, and frothy, crafted for an authentic cappuccino experience at home or office, with a healthier low sugar variant available.",
     featured: true,
     specs: [
       { name: "Weight", value: "1 kg bag" },
@@ -340,7 +340,7 @@ export const products: Product[] = [
       "/images/products/premixes/choco-milk-premix.jpeg"
     ],
     shortDescription: "Deliciously rich instant chocolate milk premix.",
-    description: "Our Choco Milk Premix combines smooth chocolate and creamy milk for an instant indulgence. Enjoy rich, chocolatey goodness with every sip—perfect for kids and adults alike.",
+    description: "Our Choco Milk Premix combines smooth chocolate and creamy milk for an instant indulgence. Enjoy rich, chocolatey goodness with every sip, perfect for kids and adults alike.",
     featured: false,
     specs: [
       { name: "Weight", value: "1 kg bag" },

@@ -14,8 +14,8 @@ export default function AboutPage() {
   return (
     <div className="w-full min-h-screen">
       <Hero
-        className="rounded-none sm:rounded-md mt-24"
-        topPaddingClass="pt-20 md:pt-24"
+        className="rounded-none min-h-[100svh]"
+        topPaddingClass="pt-24 md:pt-28"
         title="Brewed with Passion. Built on Trust."
         subtitle="Since 2007, Chocodew has been a pioneer in beverage vending solutions, committed to quality, innovation, and exceptional customer service."
         titleClassName="font-playfair text-[#49362c]"
@@ -32,7 +32,7 @@ export default function AboutPage() {
                 Our journey
               </p>
               <h2 className="mt-4 font-playfair text-3xl font-bold leading-[1.05] text-primary md:text-5xl">
-                Seventeen years, <span className="italic text-accent">one cup at a time</span>.
+                Seventeen years, <span className="italic text-accent">one cup at a time</span>
               </h2>
             </div>
             <Journey />
