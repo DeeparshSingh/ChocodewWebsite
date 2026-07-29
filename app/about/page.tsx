@@ -16,7 +16,7 @@ export default function AboutPage() {
       <Hero
         className="rounded-none min-h-[100svh]"
         topPaddingClass="pt-24 md:pt-28"
-        title="Brewed with Passion. Built on Trust."
+        title="Brewed with Passion. Built on Trust"
         subtitle="Since 2007, Chocodew has been a pioneer in beverage vending solutions, committed to quality, innovation, and exceptional customer service."
         titleClassName="font-playfair text-[#49362c]"
         subtitleClassName="max-w-3xl"

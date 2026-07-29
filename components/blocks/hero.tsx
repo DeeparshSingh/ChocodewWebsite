@@ -56,37 +56,60 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
         {...props}
       >
         {gradient && (
-          <div className="absolute top-0 isolate z-0 flex w-full flex-1 items-start justify-center">
+          <div className="absolute top-20 md:top-24 isolate z-0 flex w-full flex-1 items-start justify-center">
             {blur && (
               <div className="absolute top-0 z-50 h-48 w-screen bg-transparent opacity-10 backdrop-blur-md" />
             )}
 
-            {/* Main glow */}
-            <div className="absolute inset-auto z-50 h-36 w-[28rem] md:w-[48rem] lg:w-[40rem] -translate-y-[-30%] rounded-full bg-[#c58a4e]/80 opacity-80 blur-3xl" />
-
-            {/* Lamp effect */}
+            {/* Main glow: radial light with true falloff, breathing gently */}
             <motion.div
-              initial={{ width: "0rem" }}
-              viewport={{ once: true }}
-              transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
-              whileInView={{ width: "32rem" }}
-              className="absolute top-0 z-30 h-36 -translate-y-[20%] rounded-full bg-[#c58a4e]/60 blur-2xl"
+              animate={{ opacity: [0.65, 0.9, 0.65], scaleX: [1, 1.05, 1] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-auto z-40 h-64 w-[32rem] -translate-y-6 md:h-80 md:w-[56rem]"
+              style={{
+                background:
+                  "radial-gradient(50% 42% at 50% 32%, rgba(197,138,78,0.55) 0%, rgba(197,138,78,0.22) 42%, rgba(197,138,78,0) 72%)",
+              }}
             />
 
-            {/* Top line */}
+            {/* Hot core right under the line */}
             <motion.div
-              initial={{ width: "15rem" }}
+              initial={{ width: "0rem", opacity: 0 }}
               viewport={{ once: true }}
               transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
-              whileInView={{ width: "48rem" }}
-              className={cn("absolute inset-auto z-50 h-0.5 -translate-y-[-10%]", barColor ? undefined : "bg-[#a56a35]")}
-              style={{ backgroundColor: barColor }}
+              whileInView={{ width: "26rem", opacity: 1 }}
+              className="absolute top-0 z-30 h-24 rounded-[100%] bg-[#d9a468]/50 blur-2xl"
+            />
+
+            {/* Top line, fading at the ends */}
+            <motion.div
+              initial={{ width: "15rem", opacity: 0 }}
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
+              whileInView={{ width: "48rem", opacity: 1 }}
+              className="absolute inset-auto z-50 h-px -translate-y-[-10%]"
+              style={{
+                backgroundImage: `linear-gradient(to right, transparent, ${barColor}, transparent)`,
+              }}
+            />
+            {/* Bright filament at the line's centre */}
+            <motion.div
+              initial={{ width: "6rem", opacity: 0 }}
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", delay: 0.45, duration: 0.9 }}
+              whileInView={{ width: "22rem", opacity: 1 }}
+              className="absolute inset-auto z-50 h-px -translate-y-[-10%]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, transparent, #e8c08d, transparent)",
+                boxShadow: "0 0 18px 2px rgba(226,178,120,0.55)",
+              }}
             />
 
             {/* Left gradient cone */}
             <motion.div
               initial={{ opacity: 0.5, width: "15rem" }}
-              whileInView={{ opacity: 0.1, width: "48rem" }}
+              whileInView={{ opacity: 0.22, width: "48rem" }}
               transition={{
                 delay: 0.3,
                 duration: 0.8,
@@ -104,7 +127,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             {/* Right gradient cone */}
             <motion.div
               initial={{ opacity: 0.5, width: "15rem" }}
-              whileInView={{ opacity: 0.1, width: "48rem" }}
+              whileInView={{ opacity: 0.22, width: "48rem" }}
               transition={{
                 delay: 0.3,
                 duration: 0.8,

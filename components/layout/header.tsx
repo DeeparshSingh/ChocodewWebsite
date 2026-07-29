@@ -5,6 +5,7 @@ import { Menu, X, ArrowUpRight, Phone, Mail, MessageCircle } from "lucide-react"
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLenis } from "lenis/react";
 import { useState, useEffect } from "react";
 
 const navItems = [
@@ -23,6 +24,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const lenis = useLenis();
 
   const onDarkHero = pathname === "/" && !isScrolled;
   // while the menu is open the whole chrome goes espresso-dark
@@ -45,9 +47,15 @@ export function Header() {
     };
   }, [mobileMenuOpen]);
 
-  // safety: close the menu on any route change
+  // on any route change: close the menu, release the scroll lock, and make
+  // sure the new page starts at the top (the menu's overflow lock can
+  // otherwise swallow Next's own scroll reset)
   useEffect(() => {
     setMobileMenuOpen(false);
+    document.documentElement.style.overflow = "";
+    if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+    else window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const handleNavigation = (href: string) => {

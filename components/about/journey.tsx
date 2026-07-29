@@ -1,149 +1,102 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { milestones } from "@/data/milestones";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+interface Milestone {
+  year: number;
+  title: string;
+  description: string;
+}
+
 /**
- * The journey as a strip of rich espresso milestone cards: swipe on touch,
- * arrows or drag on desktop, snap alignment, caramel progress underneath.
- * Compact on every viewport, no long scrolling.
+ * The original alternating timeline, elevated: a caramel line that draws
+ * with scroll, glowing markers, and rich espresso milestone cards.
  */
 export function Journey() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(true);
-
-  const update = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    setProgress(max > 0 ? el.scrollLeft / max : 1);
-    setCanPrev(el.scrollLeft > 8);
-    setCanNext(el.scrollLeft < max - 8);
-  }, []);
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    update();
-    el.addEventListener("scroll", update, { passive: true });
-    const ro = new ResizeObserver(update);
-    ro.observe(el);
-    return () => {
-      el.removeEventListener("scroll", update);
-      ro.disconnect();
-    };
-  }, [update]);
-
-  const scrollByCard = (dir: 1 | -1) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const card = el.querySelector("article");
-    const w = card ? card.getBoundingClientRect().width + 20 : 420;
-    el.scrollBy({ left: dir * w, behavior: "smooth" });
-  };
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"],
+  });
+  const lineScale = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
-    <div>
-      {/* Card strip */}
-      <div
-        ref={trackRef}
-        className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 [scroll-padding-inline:1rem] md:mx-0 md:px-0 md:[scroll-padding-inline:0]"
-        role="list"
-        aria-label="Company milestones"
-      >
-        {milestones.map((m, i) => (
-          <motion.article
-            key={m.year}
-            role="listitem"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{
-              duration: 0.6,
-              delay: Math.min(i, 3) * 0.07,
-              ease: EASE,
-            }}
-            className="group relative flex w-[82vw] max-w-[400px] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-3xl bg-gradient-to-br from-[#241812] to-[#3a2417] p-7 pt-24 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/25 md:w-[420px] md:p-9 md:pt-28"
-          >
-            {/* ghost year */}
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-2 -top-5 select-none font-playfair text-[6.5rem] font-bold leading-none text-white/[0.07] transition-colors duration-500 group-hover:text-white/[0.11] md:text-[8rem]"
+    <div ref={ref} className="relative mx-auto max-w-5xl py-2">
+      {/* drawing line: centre on desktop, left rail on mobile */}
+      <motion.span
+        aria-hidden="true"
+        style={{ scaleY: lineScale }}
+        className="absolute left-4 top-0 hidden h-full w-px origin-top bg-gradient-to-b from-accent via-accent/60 to-accent/15 md:left-1/2 md:block md:-translate-x-1/2"
+      />
+      <motion.span
+        aria-hidden="true"
+        style={{ scaleY: lineScale }}
+        className="absolute left-4 top-0 h-full w-px origin-top bg-gradient-to-b from-accent via-accent/60 to-accent/15 md:hidden"
+      />
+
+      <ul className="relative space-y-10 md:space-y-14">
+        {milestones.map((m, idx) => {
+          const onRight = idx % 2 !== 0;
+          return (
+            <li
+              key={m.year}
+              className="relative pl-12 md:grid md:grid-cols-2 md:items-center md:gap-14 md:pl-0"
             >
-              {m.year}
-            </span>
+              {/* marker */}
+              <div className="pointer-events-none absolute left-4 top-10 z-10 -translate-x-1/2 md:left-1/2 md:top-1/2 md:-translate-y-1/2">
+                <span className="relative flex h-4 w-4 items-center justify-center">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/25 [animation-duration:2.6s]" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-neutral-50" />
+                </span>
+              </div>
 
-            {/* caramel accent rule */}
-            <span
-              aria-hidden="true"
-              className="absolute left-7 top-9 h-px w-10 bg-[#d99e5e] md:left-9"
-            />
+              <motion.div
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-70px" }}
+                transition={{ duration: 0.7, ease: EASE }}
+                className={cn(onRight ? "md:col-start-2" : "md:col-start-1")}
+              >
+                <TimelineCard milestone={m} />
+              </motion.div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
 
-            <p className="text-[0.7rem] font-medium tracking-[0.22em] text-[#c4b09a]">
-              {String(i + 1).padStart(2, "0")} / {milestones.length} ·{" "}
-              <span className="text-[#d99e5e]">{m.year}</span>
-            </p>
-            <h3 className="mt-3 font-playfair text-2xl font-bold text-[#f1e8da] md:text-[1.7rem]">
-              {m.title}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-[#c4b09a]">
-              {m.description}
-            </p>
-          </motion.article>
-        ))}
-      </div>
+function TimelineCard({ milestone }: { milestone: Milestone }) {
+  return (
+    <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#241812] to-[#3a2417] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/25 md:p-8">
+      {/* ghost year watermark */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-2 -top-5 select-none font-playfair text-[5.5rem] font-bold leading-none text-white/[0.07] transition-colors duration-500 group-hover:text-white/[0.11] md:text-[6.5rem]"
+      >
+        {milestone.year}
+      </span>
 
-      {/* Controls + progress */}
-      <div className="mt-7 flex items-center gap-6">
-        <div className="flex gap-2.5">
-          <button
-            type="button"
-            aria-label="Previous milestone"
-            onClick={() => scrollByCard(-1)}
-            disabled={!canPrev}
-            className={cn(
-              "flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300",
-              canPrev
-                ? "border-primary/25 text-primary hover:border-accent hover:bg-accent hover:text-white"
-                : "border-primary/10 text-primary/25"
-            )}
-          >
-            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} />
-          </button>
-          <button
-            type="button"
-            aria-label="Next milestone"
-            onClick={() => scrollByCard(1)}
-            disabled={!canNext}
-            className={cn(
-              "flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300",
-              canNext
-                ? "border-primary/25 text-primary hover:border-accent hover:bg-accent hover:text-white"
-                : "border-primary/10 text-primary/25"
-            )}
-          >
-            <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
-          </button>
-        </div>
-
-        <div className="relative h-px flex-1 overflow-hidden bg-primary/15">
-          <div
-            className="absolute inset-y-0 left-0 w-full origin-left bg-accent transition-transform duration-200 ease-out"
-            style={{ transform: `scaleX(${Math.max(0.06, progress)})` }}
-          />
-        </div>
-
-        <p className="hidden shrink-0 font-playfair text-sm font-semibold text-primary sm:block">
-          2007 – 2024
-        </p>
-      </div>
+      <span aria-hidden="true" className="block h-px w-9 bg-[#d99e5e]" />
+      <p className="mt-4 font-playfair text-lg font-bold italic text-[#d99e5e]">
+        {milestone.year}
+      </p>
+      <h3 className="mt-1.5 font-playfair text-xl font-bold text-[#f1e8da] md:text-2xl">
+        {milestone.title}
+      </h3>
+      <p className="mt-2.5 text-sm leading-relaxed text-[#c4b09a]">
+        {milestone.description}
+      </p>
     </div>
   );
 }

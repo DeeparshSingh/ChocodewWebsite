@@ -62,9 +62,9 @@ export function Trusted() {
               return (
                 <CarouselItem
                   key={i}
-                  className="flex basis-[31%] justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                  className="flex basis-[31%] justify-center pl-0 sm:basis-1/4 md:basis-[16%] lg:basis-[12.5%]"
                 >
-                  <div className="mx-2 flex shrink-0 flex-col items-center gap-2.5 md:mx-8 md:gap-3">
+                  <div className="mx-2 flex shrink-0 flex-col items-center gap-2.5 md:mx-4 md:gap-3">
                     <span className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/10 bg-card text-accent shadow-sm md:h-16 md:w-16">
                       <Icon className="h-5 w-5 md:h-7 md:w-7" strokeWidth={1.5} />
                     </span>
