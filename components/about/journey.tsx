@@ -30,7 +30,7 @@ export function Journey() {
   });
 
   return (
-    <div ref={ref} className="relative mx-auto max-w-5xl py-2">
+    <div ref={ref} className="relative mx-auto max-w-5xl py-2 lg:max-w-6xl">
       {/* drawing centre line, desktop only */}
       <motion.span
         aria-hidden="true"
@@ -85,19 +85,19 @@ export function Journey() {
 
 function TimelineCard({ milestone }: { milestone: Milestone }) {
   return (
-    <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#241812] to-[#3a2417] p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/25 md:p-8">
+    <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#241812] to-[#3a2417] p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/25 md:p-7 lg:p-10">
       {/* year, sitting back as a ghost in the corner */}
       <span
         aria-hidden="true"
-        className="cd-num pointer-events-none absolute right-5 top-3 select-none text-[3.25rem] font-bold leading-none text-white/[0.10] transition-colors duration-500 group-hover:text-white/[0.16] md:right-7 md:top-5 md:text-[4.25rem]"
+        className="cd-num pointer-events-none absolute right-5 top-3 select-none text-[3.25rem] font-bold leading-none text-white/[0.10] transition-colors duration-500 group-hover:text-white/[0.16] md:right-6 md:top-4 md:text-[3.5rem] lg:right-9 lg:top-6 lg:text-[4.5rem]"
       >
         {milestone.year}
       </span>
 
-      <h3 className="relative pr-24 font-playfair text-xl font-bold text-[#f1e8da] md:pr-32 md:text-2xl">
+      <h3 className="relative pr-24 font-playfair text-xl font-bold text-[#f1e8da] md:pr-32 lg:pr-48 lg:text-[1.7rem]">
         {milestone.title}
       </h3>
-      <p className="relative mt-2.5 max-w-prose text-sm leading-relaxed text-[#c4b09a]">
+      <p className="relative mt-2.5 max-w-prose text-sm leading-relaxed text-[#c4b09a] lg:mt-3.5 lg:text-[0.975rem] lg:leading-[1.7]">
         {milestone.description}
       </p>
     </div>
