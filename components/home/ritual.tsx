@@ -40,7 +40,6 @@ export function Ritual() {
       const surface = root.querySelector<SVGElement>("[data-surface]");
       const surfaceWrap = root.querySelector<SVGElement>("[data-surface-wrap]");
       const glow = root.querySelector<HTMLElement>("[data-cup-glow]");
-      const readout = root.querySelector<HTMLElement>("[data-fill-readout]");
       const steam = root.querySelectorAll<SVGPathElement>("[data-steam]");
       const steps = gsap.utils.toArray<HTMLElement>("[data-step]", root);
       if (!liquid) return;
@@ -54,11 +53,6 @@ export function Ritual() {
         gsap.set(liquid, { attr: { y, height: LIQUID_BOTTOM - y } });
         if (surface) gsap.set(surface, { attr: { cy: y }, autoAlpha: p > 0.02 ? 1 : 0 });
         if (glow) gsap.set(glow, { autoAlpha: p, scale: 0.85 + 0.15 * p });
-        if (readout) {
-          const pct = Math.round(p * 100);
-          readout.textContent =
-            pct >= 99 ? "POURED · 100%" : pct <= 0 ? "PRECISION POUR" : `FILLING · ${pct}%`;
-        }
       };
       applyPour();
       steps.forEach((step, i) => {
@@ -215,7 +209,8 @@ export function Ritual() {
                   <path data-steam d="M144 40 C138 32 148 26 144 18" className="motion-reduce:opacity-60" />
                 </g>
 
-                {/* liquid */}
+                {/* liquid: surface sits inside the same clip as the body so
+                    the meniscus can never spill past the cup wall */}
                 <g clipPath="url(#cd-ritual-clip)">
                   <rect
                     data-liquid
@@ -226,18 +221,18 @@ export function Ritual() {
                     fill="url(#cd-liquid-grad)"
                     className="motion-reduce:[height:94px] motion-reduce:[y:56px]"
                   />
-                </g>
-                <g data-surface-wrap>
-                  <ellipse
-                    data-surface
-                    cx="120"
-                    cy="150"
-                    rx="57"
-                    ry="5"
-                    fill="#e9c48d"
-                    opacity="0"
-                    className="motion-reduce:opacity-100"
-                  />
+                  <g data-surface-wrap>
+                    <ellipse
+                      data-surface
+                      cx="120"
+                      cy="150"
+                      rx="54"
+                      ry="5"
+                      fill="#e9c48d"
+                      opacity="0"
+                      className="motion-reduce:opacity-100"
+                    />
+                  </g>
                 </g>
 
                 {/* cup */}
@@ -246,12 +241,6 @@ export function Ritual() {
                 <path d="M46 176 L194 176" stroke="hsl(var(--primary))" strokeWidth="3.5" strokeLinecap="round" />
                 <path d="M72 192 L168 192" stroke="hsl(var(--muted-foreground))" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
               </svg>
-              <p
-                data-fill-readout
-                className="mt-2 text-center text-[0.62rem] tabular-nums tracking-[0.18em] text-muted-foreground md:mt-5 md:text-[0.72rem]"
-              >
-                PRECISION POUR
-              </p>
             </div>
           </div>
 
@@ -263,7 +252,7 @@ export function Ritual() {
                 data-step
                 className="flex min-h-[44vh] flex-col justify-center py-8 md:min-h-[62vh]"
               >
-                <p data-step-n className="font-playfair text-[clamp(3rem,7vw,5rem)] leading-none text-primary/20">
+                <p data-step-n className="cd-num text-[clamp(3rem,7vw,5rem)] font-semibold leading-none text-primary/20">
                   {s.n}
                 </p>
                 <span data-step-rule className="mt-4 block h-px w-24 origin-left scale-x-0 bg-accent motion-reduce:scale-x-100" />

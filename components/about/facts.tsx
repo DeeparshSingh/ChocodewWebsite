@@ -54,7 +54,7 @@ const CELLS: Cell[] = [
     text: "Ludhiana",
     label: "Headquarters",
     note: "Punjab, India",
-    className: "md:col-span-4",
+    className: "col-span-2 md:col-span-4",
   },
 ];
 
@@ -107,8 +107,8 @@ export function Facts() {
               <span
                 className={
                   cell.big
-                    ? "break-words font-playfair text-[clamp(3.2rem,10vw,6rem)] font-bold leading-none text-[#d99e5e]"
-                    : "break-words font-playfair text-[clamp(1.7rem,5.5vw,2.9rem)] font-bold leading-[1.05] text-[#f1e8da]"
+                    ? "cd-num break-words text-[clamp(3.2rem,10vw,6rem)] font-bold leading-none text-[#d99e5e]"
+                    : "cd-num break-words text-[clamp(1.7rem,5.5vw,2.9rem)] font-bold leading-[1.05] text-[#f1e8da]"
                 }
               >
                 {typeof cell.value === "number" ? (

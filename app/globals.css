@@ -310,3 +310,11 @@
     opacity: 0;
   }
 }
+/* Numerals: Playfair's figures read as dated next to the display text, so all
+   standalone numbers use the sans stack with lining, tabular figures. */
+.cd-num {
+  font-family: Helvetica, "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.03em;
+}

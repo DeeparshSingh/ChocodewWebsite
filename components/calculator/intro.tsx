@@ -6,14 +6,15 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function CalculatorIntro() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 text-center">
-      {/* warm glow rising from below, like the original */}
+    <section className="relative z-0 flex min-h-[100svh] flex-col items-center justify-center px-4 text-center">
+      {/* Warm glow rising from below. It bleeds past the section and feathers
+          out on its own, so the light never terminates on a section edge. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[55vh]"
+        className="pointer-events-none absolute inset-x-0 -bottom-[26vh] -z-10 h-[78vh] [mask-image:linear-gradient(to_bottom,black_55%,transparent_100%)]"
         style={{
           background:
-            "radial-gradient(60% 90% at 50% 100%, rgba(228,164,96,0.38) 0%, rgba(228,164,96,0.12) 45%, rgba(228,164,96,0) 75%)",
+            "radial-gradient(52% 50% at 50% 50%, rgba(228,164,96,0.36) 0%, rgba(228,164,96,0.14) 42%, rgba(228,164,96,0) 72%)",
         }}
       />
 

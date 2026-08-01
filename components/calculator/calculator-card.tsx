@@ -217,7 +217,7 @@ export function CalculatorCard() {
                   </p>
 
                   <div className="mt-5 flex items-baseline gap-2 border-b border-primary/10 pb-5">
-                    <span className="font-playfair text-4xl font-bold tabular-nums text-primary md:text-5xl">
+                    <span className="cd-num text-4xl font-bold tabular-nums text-primary md:text-5xl">
                       {fmt(result.monthly)}
                     </span>
                     <span className="text-sm text-muted-foreground">
@@ -226,7 +226,7 @@ export function CalculatorCard() {
                   </div>
 
                   <div className="mt-5 flex items-baseline gap-2 border-b border-primary/10 pb-5">
-                    <span className="font-playfair text-5xl font-bold tabular-nums text-accent md:text-6xl">
+                    <span className="cd-num text-5xl font-bold tabular-nums text-accent md:text-6xl">
                       {fmt(result.roundedKg, 1)}
                     </span>
                     <span className="max-w-[9rem] text-sm leading-snug text-muted-foreground">
@@ -235,7 +235,7 @@ export function CalculatorCard() {
                   </div>
 
                   <div className="mt-5 flex items-baseline gap-2">
-                    <span className="font-playfair text-3xl font-bold tabular-nums text-primary md:text-4xl">
+                    <span className="cd-num text-3xl font-bold tabular-nums text-primary md:text-4xl">
                       {fmt(result.recommendedKg)}
                     </span>
                     <span className="max-w-[12rem] text-sm leading-snug text-muted-foreground">

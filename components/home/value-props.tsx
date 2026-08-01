@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Coffee, Award, Truck, HeartHandshake } from "lucide-react";
+import { Nums } from "@/components/fx/nums";
 
 const valueProps = [
   {
@@ -76,7 +77,7 @@ export function ValueProps() {
                   index === 3 ? "md:border-r-0" : "",
                 ].join(" ")}
               >
-                <span className="font-playfair text-5xl leading-none text-accent/70 transition-colors duration-500 group-hover:text-accent md:text-6xl">
+                <span className="cd-num text-5xl font-semibold leading-none text-accent/70 transition-colors duration-500 group-hover:text-accent md:text-6xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
@@ -86,7 +87,7 @@ export function ValueProps() {
                 />
 
                 <h3 className="mt-4 font-playfair text-base font-semibold leading-snug text-primary md:text-xl">
-                  {prop.title}
+                  <Nums>{prop.title}</Nums>
                 </h3>
                 <p className="mt-2 text-xs leading-relaxed text-muted-foreground md:text-sm">
                   {prop.description}

@@ -8,6 +8,7 @@ import { Product } from "@/types/product";
 import Image from "next/image";
 import { useState } from "react";
 import { ProductEnquiryModal } from "@/components/products/product-enquiry-modal";
+import { Nums } from "@/components/fx/nums";
 
 interface ProductCardProps {
   product: Product;
@@ -38,7 +39,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <CardHeader className="p-3 md:p-4 pb-0">
           <CardTitle className="text-lg md:text-xl line-clamp-2">
             <Link href={`/products/${product.slug}`} className="hover:text-primary transition-colors">
-              {product.name}
+              <Nums>{product.name}</Nums>
             </Link>
           </CardTitle>
           <CardDescription className="line-clamp-2 text-sm md:text-base">

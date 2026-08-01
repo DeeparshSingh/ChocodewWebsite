@@ -146,7 +146,7 @@ export function Hero() {
             { value: "ISO 9001", valueLg: "ISO 9001:2015", label: "CERTIFIED QUALITY" },
           ].map((stat) => (
             <div key={stat.label}>
-              <dd className="font-playfair text-lg font-bold text-[#f1e8da] sm:text-xl md:text-3xl">
+              <dd className="cd-num text-lg font-semibold text-[#f1e8da] sm:text-xl md:text-3xl">
                 {stat.valueLg ? (
                   <>
                     <span className="md:hidden">{stat.value}</span>

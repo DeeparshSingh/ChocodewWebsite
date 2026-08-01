@@ -11,6 +11,7 @@ import { CheckCircle2 } from 'lucide-react';
 import { ProductEnquiryModal } from "@/components/products/product-enquiry-modal";
 import { ImageLightbox } from "@/components/products/image-lightbox";
 import { ProductImageCarousel } from "@/components/products/product-image-carousel";
+import { Nums } from "@/components/fx/nums";
 
 interface ProductDetailsProps {
   product: Product;
@@ -70,7 +71,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           )}
         </motion.div>
 
-        <motion.h1 variants={itemAnimation} className="text-3xl md:text-4xl font-bold mb-4">{product.name}</motion.h1>
+        <motion.h1 variants={itemAnimation} className="text-3xl md:text-4xl font-bold mb-4"><Nums>{product.name}</Nums></motion.h1>
         
         <motion.p variants={itemAnimation} className="text-muted-foreground mb-6">{product.description}</motion.p>
         
@@ -107,7 +108,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         )}
         
         {/* Call to Action Buttons */}
-        <motion.div variants={itemAnimation} className="flex flex-wrap gap-4 mt-8">
+        <motion.div variants={itemAnimation} className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
           <Button onClick={() => setShowEnquiryModal(true)} size="lg">
             Request Information
           </Button>

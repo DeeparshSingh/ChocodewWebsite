@@ -18,14 +18,15 @@ const CHANNELS = [
 
 export function ContactHero() {
   return (
-    <div className="relative overflow-hidden pb-14 pt-36 md:pb-20 md:pt-44">
-      {/* warm themed backdrop */}
+    <div className="relative z-0 pb-14 pt-36 md:pb-20 md:pt-44">
+      {/* Warm themed backdrop. Extends past the hero and feathers out, so the
+          light dissolves into the next section instead of ending on a seam. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-x-0 -bottom-40 top-0 -z-10 [mask-image:linear-gradient(to_bottom,black_58%,transparent_100%)]"
         style={{
           background:
-            "radial-gradient(52% 42% at 50% 12%, rgba(197,138,78,0.28) 0%, rgba(197,138,78,0) 70%), radial-gradient(70% 45% at 50% 108%, rgba(197,138,78,0.18) 0%, rgba(197,138,78,0) 70%)",
+            "radial-gradient(52% 36% at 50% 10%, rgba(197,138,78,0.28) 0%, rgba(197,138,78,0) 70%), radial-gradient(62% 30% at 50% 68%, rgba(197,138,78,0.16) 0%, rgba(197,138,78,0) 72%)",
         }}
       />
       {/* fine lamp line, echoing the About hero */}
