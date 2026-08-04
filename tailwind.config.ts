@@ -10,6 +10,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        /**
+         * iPad-class portrait viewports: mini (744) through Pro 12.9" (1024).
+         * These land inside `md`/`lg`, so they need their own hook to be
+         * adjusted without touching phones or desktops.
+         */
+        'tablet-p': {
+          raw: '(min-width: 700px) and (max-width: 1180px) and (orientation: portrait)',
+        },
+        /**
+         * Where the ritual section earns its two-column layout: genuinely
+         * landscape space, or a viewport wider than any iPad portrait.
+         */
+        'ritual-wide': {
+          raw: '(min-width: 1181px), (min-width: 768px) and (orientation: landscape)',
+        },
+      },
       maxWidth: {
         'container': '1400px',
       },

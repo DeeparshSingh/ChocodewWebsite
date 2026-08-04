@@ -144,7 +144,7 @@ export function Ritual() {
       className="w-full bg-neutral-50 text-primary"
       aria-label="How Chocodew vending works"
     >
-      <div className="container mx-auto max-w-7xl px-4 py-16 md:py-28">
+      <div className="container mx-auto max-w-7xl px-4 py-16 ritual-wide:py-28">
         <div className="mb-10 max-w-2xl md:mb-8">
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
@@ -167,10 +167,11 @@ export function Ritual() {
           </motion.p>
         </div>
 
-        <div className="grid gap-2 md:grid-cols-[1fr_1.15fr] md:gap-24">
-          {/* Filling cup: sticky on every breakpoint, always clear of the navbar */}
-          <div className="sticky top-[82px] z-20 -mx-4 bg-gradient-to-b from-neutral-50 from-75% to-neutral-50/0 px-4 pb-6 pt-2 md:top-0 md:z-auto md:mx-0 md:flex md:h-screen md:items-center md:bg-none md:p-0">
-            <div className="relative mx-auto w-[min(40vw,175px)] md:w-[min(26vw,320px)]">
+        <div className="grid gap-2 ritual-wide:grid-cols-[1fr_1.15fr] ritual-wide:gap-24">
+          {/* Filling cup: pinned under the navbar in portrait, centred beside
+              the steps once there is real landscape width to work with */}
+          <div className="sticky top-[82px] z-20 -mx-4 bg-gradient-to-b from-neutral-50 from-75% to-neutral-50/0 px-4 pb-6 pt-2 ritual-wide:top-0 ritual-wide:z-auto ritual-wide:mx-0 ritual-wide:flex ritual-wide:h-screen ritual-wide:items-center ritual-wide:bg-none ritual-wide:p-0">
+            <div className="relative mx-auto w-[min(40vw,175px)] tablet-p:w-[min(32vw,250px)] ritual-wide:w-[min(26vw,320px)]">
               {/* warm glow that builds with the pour */}
               <div
                 data-cup-glow
@@ -250,7 +251,7 @@ export function Ritual() {
               <article
                 key={s.n}
                 data-step
-                className="flex min-h-[44vh] flex-col justify-center py-8 md:min-h-[62vh]"
+                className="flex min-h-[44vh] flex-col justify-center py-8 tablet-p:min-h-[30vh] tablet-p:py-6 ritual-wide:min-h-[62vh]"
               >
                 <p data-step-n className="cd-num text-[clamp(3rem,7vw,5rem)] font-semibold leading-none text-primary/20">
                   {s.n}
@@ -259,7 +260,7 @@ export function Ritual() {
                 <h3 className="mt-5 font-playfair text-2xl font-bold text-primary md:text-3xl">
                   {s.title}
                 </h3>
-                <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">
+                <p className="mt-4 max-w-md leading-relaxed text-muted-foreground tablet-p:max-w-2xl">
                   {s.body}
                 </p>
               </article>

@@ -53,7 +53,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="cd-grain relative flex min-h-[100svh] w-full flex-col justify-end overflow-hidden bg-[#211712]"
+      className="cd-grain relative flex min-h-[100svh] w-full flex-col justify-end overflow-hidden bg-[#211712] tablet-p:justify-center"
       aria-label="Chocodew premium beverage vending"
     >
       {/* 3D bean field + warm vignette */}
@@ -72,7 +72,7 @@ export function Hero() {
 
       <div
         data-hero-content
-        className="container mx-auto max-w-7xl px-4 pb-[clamp(3rem,8vh,5rem)] pt-32 relative z-10"
+        className="container mx-auto max-w-7xl px-4 pb-[clamp(3rem,8vh,5rem)] pt-32 relative z-10 tablet-p:pb-20"
       >
         <motion.div
           className="mb-7 flex items-center gap-4"
